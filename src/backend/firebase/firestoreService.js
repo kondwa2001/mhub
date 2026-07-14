@@ -1,21 +1,16 @@
-import { firebaseConfig } from './firebaseConfig'
+import { collection, doc, getDocs, setDoc } from 'firebase/firestore'
+import { db } from './firebaseConfig'
 
-const root = () => `https://firestore.googleapis.com/v1/projects/${firebaseConfig.projectId}/databases/(default)/documents`
-
-// REST keeps the client lightweight; route writes through secure Cloud Functions in production.
-export async function getCollection(collection) {
-  if (!firebaseConfig.projectId) return []
-  const response = await fetch(`${root()}/${collection}`)
-  if (!response.ok) throw new Error('Could not load Firestore data')
-  return response.json()
+// Use the Firebase SDK so Firestore security rules and Firebase Authentication
+// are applied automatically to every request.
+export async function getCollection(collectionName) {
+  const snapshot = await getDocs(collection(db, collectionName))
+  return snapshot.docs.map((item) => ({ id: item.id, ...item.data() }))
 }
 
-export async function saveOpportunity(opportunity, token) {
-  if (!firebaseConfig.projectId) throw new Error('Add Firebase values to .env.local first')
-  const response = await fetch(`${root()}/opportunities?documentId=${opportunity.id}`, {
-    method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-    body: JSON.stringify({ fields: Object.fromEntries(Object.entries(opportunity).map(([key, value]) => [key, { stringValue: String(value) }])) }),
-  })
-  if (!response.ok) throw new Error('Could not save opportunity')
-  return response.json()
+export async function saveOpportunity(opportunity) {
+  const { id, ...data } = opportunity
+  if (!id) throw new Error('An opportunity id is required')
+  await setDoc(doc(db, 'opportunities', id), data, { merge: true })
+  return { id, ...data }
 }
