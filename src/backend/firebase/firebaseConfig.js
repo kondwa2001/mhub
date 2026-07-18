@@ -1,5 +1,6 @@
 import { getApp, getApps, initializeApp } from 'firebase/app'
 import { getAnalytics, isSupported } from 'firebase/analytics'
+import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 // Firebase web configuration is public by design; keep it in .env.local so
@@ -15,6 +16,7 @@ export const firebaseConfig = {
 }
 
 export const app = getApps().length ? getApp() : initializeApp(firebaseConfig)
+export const auth = getAuth(app)
 export const db = getFirestore(app)
 
 // Analytics only works in supported browser environments. Exporting a promise

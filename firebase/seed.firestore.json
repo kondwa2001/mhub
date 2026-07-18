@@ -1,0 +1,67 @@
+{
+  "opportunities": {
+    "om": {
+      "initials": "OM",
+      "name": "Omidyar Network",
+      "focus": ["Inclusive technology", "Entrepreneurship"],
+      "region": ["Global", "Africa"],
+      "matchScore": 94,
+      "deadlineAt": null,
+      "deadlineLabel": "Rolling",
+      "status": "open",
+      "tone": "green",
+      "createdAt": "SERVER_TIMESTAMP",
+      "updatedAt": "SERVER_TIMESTAMP"
+    },
+    "mf": {
+      "initials": "MF",
+      "name": "Mastercard Foundation",
+      "focus": ["Youth work", "Digital economies"],
+      "region": ["Africa"],
+      "matchScore": 91,
+      "deadlineAt": "2026-05-30T00:00:00.000Z",
+      "deadlineLabel": "30 May 2026",
+      "status": "open",
+      "tone": "orange",
+      "createdAt": "SERVER_TIMESTAMP",
+      "updatedAt": "SERVER_TIMESTAMP"
+    },
+    "gi": {
+      "initials": "GI",
+      "name": "Global Innovation Fund",
+      "focus": ["Climate", "Social innovation"],
+      "region": ["Low-income countries"],
+      "matchScore": 88,
+      "deadlineAt": "2026-06-18T00:00:00.000Z",
+      "deadlineLabel": "18 Jun 2026",
+      "status": "open",
+      "tone": "purple",
+      "createdAt": "SERVER_TIMESTAMP",
+      "updatedAt": "SERVER_TIMESTAMP"
+    }
+  },
+  "activities": {
+    "startup-incubation-sprint": {
+      "date": 14,
+      "month": "MAY",
+      "startsAt": "2026-05-14T08:00:00.000Z",
+      "type": "Programme",
+      "title": "Startup incubation sprint",
+      "description": "A practical week for early-stage founders building high-impact ventures.",
+      "status": "this_week",
+      "createdAt": "SERVER_TIMESTAMP",
+      "updatedAt": "SERVER_TIMESTAMP"
+    },
+    "open-innovation-meetup": {
+      "date": 22,
+      "month": "MAY",
+      "startsAt": "2026-05-22T08:00:00.000Z",
+      "type": "Community",
+      "title": "Open innovation meetup",
+      "description": "Connecting builders, mentors, researchers and partners in Lilongwe.",
+      "status": "upcoming",
+      "createdAt": "SERVER_TIMESTAMP",
+      "updatedAt": "SERVER_TIMESTAMP"
+    }
+  }
+}

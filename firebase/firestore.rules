@@ -1,0 +1,52 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function ownsUser(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    // Curated donor opportunities are readable to signed-in workspace users.
+    // Only administrators (set with a Firebase custom claim) can curate them.
+    match /opportunities/{opportunityId} {
+      allow read: if signedIn();
+      allow create, update, delete: if signedIn() && request.auth.token.admin == true;
+    }
+
+    // Activities are curated under the same admin workflow.
+    match /activities/{activityId} {
+      allow read: if signedIn();
+      allow create, update, delete: if signedIn() && request.auth.token.admin == true;
+    }
+
+    // A person can read and update only their own profile and saved items.
+    match /users/{userId} {
+      allow read, create, update: if ownsUser(userId);
+      allow delete: if false;
+
+      match /savedOpportunities/{opportunityId} {
+        allow read, create, update, delete: if ownsUser(userId);
+      }
+    }
+
+    // Members request introductions; contact details never appear in the directory.
+    match /contactRequests/{requestId} {
+      allow create: if signedIn()
+        && request.resource.data.requesterId == request.auth.uid
+        && request.resource.data.donorId is string
+        && request.resource.data.message is string
+        && request.resource.data.message.size() > 0
+        && request.resource.data.message.size() <= 3000;
+      allow read: if signedIn() && (resource.data.requesterId == request.auth.uid || request.auth.token.admin == true);
+      allow update, delete: if signedIn() && request.auth.token.admin == true;
+    }
+
+    // Deny every collection that is not explicitly part of this schema.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
