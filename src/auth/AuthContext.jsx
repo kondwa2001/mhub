@@ -89,8 +89,11 @@ export function AuthProvider({ children }) {
         INVALID_EMAIL: 'auth/invalid-email',
         MISSING_EMAIL: 'auth/missing-email',
         TOO_MANY_ATTEMPTS_TRY_LATER: 'auth/too-many-requests',
+        OPERATION_NOT_ALLOWED: 'auth/operation-not-allowed',
+        INVALID_API_KEY: 'auth/api-key-not-valid',
+        USER_DISABLED: 'auth/user-disabled',
       }
-      error.code = codeMap[message] || 'auth/reset-failed'
+      error.code = codeMap[message] || message || 'auth/reset-failed'
       throw error
     }
 

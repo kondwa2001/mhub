@@ -13,10 +13,11 @@ function readableError(error) {
     'auth/configuration-not-found': 'Firebase auth is not configured. Add VITE_FIREBASE_API_KEY, VITE_FIREBASE_AUTH_DOMAIN, VITE_FIREBASE_PROJECT_ID, and VITE_FIREBASE_APP_ID to .env.local.',
     'auth/operation-not-allowed': 'Firebase Email/Password sign-in is disabled or not configured for this project. Verify Authentication > Sign-in method in Firebase Console.',
     'auth/api-key-not-valid': 'The Firebase web API key is invalid. Check the VITE_FIREBASE_API_KEY value in .env.local.',
+    'auth/user-disabled': 'This account has been disabled. Contact support if you need access.',
     'auth/network-request-failed': 'Firebase could not be reached. Check your internet connection and Firebase project settings.',
     'auth/too-many-requests': 'Too many attempts were made. Wait a few minutes, then try again.',
   }
-  return messages[error.code] || `Firebase could not complete that request${error.code ? ` (${error.code})` : ''}.`
+  return messages[error.code] || error.message || `Firebase could not complete that request${error.code ? ` (${error.code})` : ''}`
 }
 
 export function AuthForm({ onClose, required = false }) {
