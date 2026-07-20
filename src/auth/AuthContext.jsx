@@ -5,11 +5,7 @@ import { SessionContext } from './sessionContext'
 import { auth, db, hasFirebaseConfig } from '../backend/firebase/firebaseConfig'
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => hasFirebaseConfig ? null : {
-    uid: 'local-demo-user',
-    name: 'Demo user',
-    email: 'demo@example.com',
-  })
+  const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
