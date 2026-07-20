@@ -11,10 +11,6 @@ export function Settings({ user, onSignOut, onNavigate }) {
     name: user?.name || '',
     email: user?.email || '',
     phone: user?.phone || '',
-    company: user?.company || '',
-    role: user?.role || '',
-    industry: user?.industry || '',
-    description: user?.description || '',
   })
   const [passwordData, setPasswordData] = useState({
     currentPassword: '',
@@ -65,36 +61,6 @@ export function Settings({ user, onSignOut, onNavigate }) {
       setTimeout(() => setMessage({ type: '', text: '' }), 3000)
     } catch {
       setMessage({ type: 'error', text: 'Failed to update profile. Please try again.' })
-    }
-  }
-
-  const updateOrganisation = async () => {
-    try {
-      const auth = getAuth()
-      const currentUser = auth.currentUser
-
-      if (!currentUser) {
-        setMessage({ type: 'error', text: 'Not signed in. Please sign in to save your organisation details.' })
-        return
-      }
-
-      // Save organisation details to Firestore
-      await setDoc(
-        doc(db, 'users', currentUser.uid),
-        {
-          company: formData.company,
-          role: formData.role,
-          industry: formData.industry,
-          description: formData.description,
-          updatedAt: serverTimestamp(),
-        },
-        { merge: true }
-      )
-
-      setMessage({ type: 'success', text: 'Organisation details updated successfully!' })
-      setTimeout(() => setMessage({ type: '', text: '' }), 3000)
-    } catch {
-      setMessage({ type: 'error', text: 'Failed to update organisation details. Please try again.' })
     }
   }
 
@@ -189,13 +155,6 @@ export function Settings({ user, onSignOut, onNavigate }) {
           Profile
         </button>
         <button
-          className={`settings-tab ${activeTab === 'organisation' ? 'active' : ''}`}
-          onClick={() => setActiveTab('organisation')}
-        >
-          <Icon name="building" />
-          Organisation
-        </button>
-        <button
           className={`settings-tab ${activeTab === 'security' ? 'active' : ''}`}
           onClick={() => setActiveTab('security')}
         >
@@ -255,76 +214,10 @@ export function Settings({ user, onSignOut, onNavigate }) {
           </div>
         )}
 
-        {activeTab === 'organisation' && (
-          <div className="settings-panel">
-            <h3>Organisation Details</h3>
-            <p className="panel-description">Add or update your organisation information</p>
-
-            <div className="form-group">
-              <label htmlFor="company">Organisation Name</label>
-              <input
-                id="company"
-                type="text"
-                name="company"
-                value={formData.company}
-                onChange={handleProfileChange}
-                placeholder="Your organisation name"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="role">Your Role</label>
-              <input
-                id="role"
-                type="text"
-                name="role"
-                value={formData.role}
-                onChange={handleProfileChange}
-                placeholder="e.g., Programme Manager, Director"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="industry">Industry/Sector</label>
-              <select
-                id="industry"
-                name="industry"
-                value={formData.industry}
-                onChange={handleProfileChange}
-              >
-                <option value="">Select an industry</option>
-                <option value="Education">Education</option>
-                <option value="Healthcare">Healthcare</option>
-                <option value="Technology">Technology</option>
-                <option value="Environment">Environment & Climate</option>
-                <option value="Social Services">Social Services</option>
-                <option value="Arts & Culture">Arts & Culture</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="description">What your organisation does</label>
-              <textarea
-                id="description"
-                name="description"
-                value={formData.description}
-                onChange={handleProfileChange}
-                placeholder="Describe your organisation's mission, focus areas, and impact..."
-                rows="5"
-              />
-            </div>
-
-            <button className="primary-button" onClick={updateOrganisation}>
-              <Icon name="save" />
-              Save Organisation Details
-            </button>
-          </div>
-        )}
-
         {activeTab === 'security' && (
           <div className="settings-panel">
             <h3>Change Password</h3>
+            <p className="panel-description">Keep your account secure with a strong password</p>
 
             <div className="form-group">
               <label htmlFor="currentPassword">Current Password</label>

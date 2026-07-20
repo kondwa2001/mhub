@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Example Foundation",
+    "summary": "What this organisation brings to an mHub partnership.",
+    "focusTags": ["digital-skills", "youth"],
+    "supportTypes": ["funding", "mentorship"],
+    "regions": ["Malawi", "Africa"],
+    "website": "https://example.org",
+    "contactEmail": "partnerships@example.org"
+  },
+  {
+    "name": "Example Technical Partner",
+    "summary": "Delivery partner supplying trainers and lab space.",
+    "focusTags": ["ict", "digital-skills", "education"],
+    "supportTypes": ["training", "infrastructure"],
+    "regions": ["Malawi"]
+  }
+]
