@@ -15,6 +15,25 @@ export async function saveOpportunity(opportunity) {
   return { id, ...data }
 }
 
+export async function createActivity(activity) {
+  const dueAt = activity.dueAt instanceof Date ? activity.dueAt : new Date(activity.dueAt)
+  if (!activity.title?.trim() || Number.isNaN(dueAt.getTime())) {
+    throw new Error('An activity title and due date are required.')
+  }
+
+  const record = await addDoc(collection(db, 'activities'), {
+    title: activity.title.trim(),
+    type: activity.type?.trim() || 'Activity',
+    description: activity.description?.trim() || '',
+    dueAt,
+    startsAt: dueAt,
+    status: 'upcoming',
+    createdAt: serverTimestamp(),
+    updatedAt: serverTimestamp(),
+  })
+  return { id: record.id, ...activity, dueAt, startsAt: dueAt, status: 'upcoming' }
+}
+
 export async function createContactRequest({ donorId, donorName, message, user }) {
   if (!donorId || !user?.uid) throw new Error('Please sign in before sending a contact request.')
   const request = await addDoc(collection(db, 'contactRequests'), {

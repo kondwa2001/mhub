@@ -1,0 +1,34 @@
+.activity-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 14px;
+}
+
+.activity-tabs .chip { margin: 0; }
+
+.activity-form {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr .75fr;
+  gap: 13px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 17px;
+  margin-bottom: 16px;
+}
+
+.activity-form label { display: grid; gap: 6px; font-size: 11px; font-weight: 700; color: #52635d; }
+.activity-form input, .activity-form select, .activity-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 9px; color: var(--ink); background: #fff; font: 400 12px 'DM Sans', sans-serif; }
+.activity-form textarea { resize: vertical; }
+.activity-description { grid-column: span 3; }
+.activity-form-actions { grid-column: span 3; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 11px; color: #ba4a3f; }
+.activity-form-actions .primary-button { margin-left: auto; }
+.activity-empty { padding: 22px !important; text-align: center; color: var(--muted); }
+
+@media (max-width: 620px) {
+  .activity-form { grid-template-columns: 1fr; }
+  .activity-description, .activity-form-actions { grid-column: span 1; }
+  .activity-form-actions { align-items: flex-end; flex-direction: column; }
+  .activity-form-actions .primary-button { margin-left: 0; }
+  .activity-tabs { margin-top: 3px; }
+}

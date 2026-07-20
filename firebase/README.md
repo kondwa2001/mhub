@@ -5,7 +5,7 @@ Firestore creates collections when the first document is written; it has no SQL-
 | Collection/path | Purpose | Key fields |
 | --- | --- | --- |
 | `opportunities/{opportunityId}` | Curated donor opportunities | `name`, `focus` (array), `region` (array), `matchScore`, `deadlineAt` (timestamp or `null`), `deadlineLabel`, `status`, `tone` |
-| `activities/{activityId}` | mHub programme/activity calendar | `startsAt` (timestamp), `type`, `title`, `description`, `status` |
+| `activities/{activityId}` | mHub programme/activity calendar | `dueAt` (timestamp), `startsAt` (legacy timestamp), `type`, `title`, `description`, `status` |
 | `users/{uid}` | Firebase Authentication user profile | `displayName`, `email`, `photoURL`, `createdAt`, `updatedAt` |
 | `users/{uid}/savedOpportunities/{opportunityId}` | A user's saved donor opportunity | `opportunityId`, `savedAt`, `notes` |
 | `contactRequests/{requestId}` | Private request for a workspace introduction to a donor | `donorId`, `message`, `requesterId`, `status`, `createdAt` |
