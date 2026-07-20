@@ -1,29 +1,53 @@
 import { useEffect, useState } from 'react'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut as firebaseSignOut, updateProfile } from 'firebase/auth'
-import { doc, serverTimestamp, setDoc } from 'firebase/firestore'
+import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore'
 import { SessionContext } from './sessionContext'
 import { auth, db, hasFirebaseConfig, firebaseConfig } from '../backend/firebase/firebaseConfig'
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(() => Boolean(hasFirebaseConfig && auth))
 
   useEffect(() => {
     if (!hasFirebaseConfig || !auth) {
-      setLoading(false)
       return
     }
 
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-      setUser(firebaseUser ? { uid: firebaseUser.uid, name: firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'MHub member', email: firebaseUser.email } : null)
-      setLoading(false)
-    })
-    return unsubscribe
-  }, [])
+    let active = true
 
-  useEffect(() => {
-    if (!hasFirebaseConfig || !auth) {
-      setLoading(false)
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (!firebaseUser) {
+        if (active) {
+          setUser(null)
+          setLoading(false)
+        }
+        return
+      }
+
+      try {
+        const profile = db ? await getDoc(doc(db, 'users', firebaseUser.uid)) : null
+        const profileData = profile?.exists() ? profile.data() : {}
+
+        if (active) {
+          setUser({
+            ...profileData,
+            uid: firebaseUser.uid,
+            name: profileData.name || profileData.displayName || firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'MHub member',
+            email: firebaseUser.email,
+          })
+        }
+      } catch {
+        // Authentication remains usable if the profile record has not been created yet.
+        if (active) {
+          setUser({ uid: firebaseUser.uid, name: firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'MHub member', email: firebaseUser.email })
+        }
+      } finally {
+        if (active) setLoading(false)
+      }
+    })
+    return () => {
+      active = false
+      unsubscribe()
     }
   }, [])
 

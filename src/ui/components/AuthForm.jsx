@@ -27,6 +27,7 @@ export function AuthForm({ onClose, required = false }) {
   const [email, setEmail] = useState('')
   const [organization, setOrganization] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -35,9 +36,20 @@ export function AuthForm({ onClose, required = false }) {
     event.preventDefault(); setError(''); setSuccess(''); setSubmitting(true)
     try {
       if (mode === 'register') {
+        if (password !== confirmPassword) {
+          setError('Passwords do not match.')
+          setSubmitting(false)
+          return
+        }
+        if (password.length < 6) {
+          setError('Password must be at least 6 characters long.')
+          setSubmitting(false)
+          return
+        }
         await register({ name: name.trim(), email: email.trim(), password, organization: organization.trim() })
         setMode('signin')
         setPassword('')
+        setConfirmPassword('')
         setSuccess('Account created. Please sign in to continue.')
       } else if (mode === 'forgot') {
         await resetPassword({ email: email.trim() })
@@ -50,9 +62,9 @@ export function AuthForm({ onClose, required = false }) {
     } catch (authError) { setError(readableError(authError)) } finally { setSubmitting(false) }
   }
 
-  const changeMode = () => { setMode(mode === 'signin' ? 'register' : 'signin'); setError(''); setSuccess('') }
-  const showForgotPassword = () => { setMode('forgot'); setError(''); setSuccess('') }
-  const returnToSignin = () => { setMode('signin'); setError(''); setSuccess('') }
+  const changeMode = () => { setMode(mode === 'signin' ? 'register' : 'signin'); setError(''); setSuccess(''); setConfirmPassword('') }
+  const showForgotPassword = () => { setMode('forgot'); setError(''); setSuccess(''); setConfirmPassword('') }
+  const returnToSignin = () => { setMode('signin'); setError(''); setSuccess(''); setConfirmPassword('') }
 
   return <div className={required ? 'auth-backdrop auth-required' : 'auth-backdrop'} role="presentation" onMouseDown={required ? undefined : onClose}>
     <section className="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title" onMouseDown={(event) => event.stopPropagation()}>
@@ -65,6 +77,7 @@ export function AuthForm({ onClose, required = false }) {
         {mode === 'register' && <label>Company or organisation<input value={organization} onChange={(event) => setOrganization(event.target.value)} autoComplete="organization" placeholder="Optional" /></label>}
         <label>Email address<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} required autoComplete="email" /></label>
         {mode !== 'forgot' && <label>Password<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required minLength="6" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} /></label>}
+        {mode === 'register' && <label>Confirm Password<input type="password" value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required minLength="6" autoComplete="new-password" /></label>}
         {error && <p className="auth-error" role="alert">{error}</p>}
         {success && <p className="auth-success" role="status">{success}</p>}
         <button className="primary-button auth-submit" disabled={submitting}>{submitting ? 'Please wait…' : mode === 'signin' ? 'Sign in' : mode === 'forgot' ? 'Send reset link' : 'Create account'}</button>
