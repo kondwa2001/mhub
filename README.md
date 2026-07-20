@@ -9,15 +9,23 @@ Currently, two official plugins are available:
 
 ## Environment setup
 
-This project uses Vite environment variables for Firebase configuration. Create a local `.env.local` file in the project root and add your Firebase values there.
+This project uses Vite environment variables for Firebase configuration. A shared `.env` file is included in this repo so collaborators can run the app after pulling.
+
+If you need a local override, create a `.env.local` file in the project root.
 
 A convenient way to start is:
+
+```bash
+cp .env.example .env
+```
+
+or:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Then replace the placeholder values in `.env.local` with your actual Firebase project values.
+Then replace the placeholder values with your actual Firebase project values.
 
 Required variables:
 
