@@ -1,17 +1,21 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useAuth } from './auth/useAuth'
 import { donorOpportunities, mhubActivities } from './backend/data/seedData'
-import { createActivity, createContactRequest, getCollection } from './backend/firebase/firestoreService'
+import { createActivity, createContactRequest, getCollection, subscribeToNotifications } from './backend/firebase/firestoreService'
 import { DonorCard } from './ui/components/DonorCard'
 import { DonorDetails } from './ui/components/DonorDetails'
 import { Icon } from './ui/components/Icon'
 import { ActivityPanel } from './ui/components/ActivityPanel'
 import { AuthForm } from './ui/components/AuthForm'
 import { Settings } from './ui/components/Settings'
+import { Notifications } from './ui/components/Notifications'
 import './ui/styles/app.css'
 import './ui/styles/activities.css'
 import './ui/styles/discovery.css'
 import './ui/styles/settings.css'
+import './ui/styles/notifications.css'
+import './ui/styles/bright-theme.css'
+import './ui/styles/brand-logo.css'
 
 function App() {
   const { user, loading, signOut } = useAuth()
@@ -24,6 +28,12 @@ function App() {
   const [directoryState, setDirectoryState] = useState('loading')
   const [selectedDonor, setSelectedDonor] = useState(null)
   const [activities, setActivities] = useState(mhubActivities)
+  const [notifications, setNotifications] = useState([])
+
+  useEffect(() => {
+    if (!user?.uid) return undefined
+    return subscribeToNotifications(user.uid, setNotifications)
+  }, [user?.uid])
 
   useEffect(() => {
     getCollection('opportunities').then((items) => {
@@ -80,13 +90,13 @@ function App() {
 
   return <main className="app-shell">
     <aside className="sidebar">
-      <a className="brand" href="#overview" onClick={(event) => { event.preventDefault(); selectNavigation('Overview') }} aria-label="MHub opportunities home"><span className="brand-mark"><i></i><i></i><i></i></span><span>mHub</span></a>
+      <a className="brand" href="#overview" onClick={(event) => { event.preventDefault(); selectNavigation('Overview') }} aria-label="MHub opportunities home"><img src="/mhub-logo.svg" alt="mHub" /></a>
       <div className="workspace"><span>WORKSPACE</span><button>Opportunity desk <Icon name="chevron" /></button></div>
       <nav aria-label="Main navigation">{['Overview', 'Donor finder', 'Activities', 'Saved', 'Settings'].map((item) => <button key={item} className={tab === item ? 'nav-item active' : 'nav-item'} onClick={() => selectNavigation(item)}><Icon name={item === 'Overview' ? 'grid' : item === 'Donor finder' ? 'search' : item === 'Activities' ? 'calendar' : item === 'Saved' ? 'bookmark' : 'settings'} />{item}{item === 'Saved' && saved.size > 0 && <b>{saved.size}</b>}</button>)}</nav>
       <div className="sidebar-bottom"><button className="nav-item logout-button" onClick={signOut}><Icon name="logout" />Log out</button><div className="profile"><div className="avatar">{user.name?.[0] || 'M'}</div><div><strong>{user.name || 'MHub team'}</strong><small>{user.email}</small></div></div></div>
     </aside>
     <section className="content">
-      <header className="topbar"><div className="crumb"><span>mHub</span><Icon name="chevron" />Opportunity desk</div><div className="header-actions"><button className="icon-button"><Icon name="bell" /></button><button className="help-button">?</button></div></header>
+      <header className="topbar"><div className="crumb"><span>mHub</span><Icon name="chevron" />Opportunity desk</div><div className="header-actions"><Notifications user={user} notifications={notifications} /><button className="help-button">?</button></div></header>
       <div className="page">
         {pageContent}
         {tab === 'Legacy' && <>

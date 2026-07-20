@@ -1,2 +1,2 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
-*{box-sizing:border-box} body{margin:0;background:#f7f8f5;color:#20332f;font-family:'DM Sans',Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}svg{width:18px;height:18px}#root{min-height:100vh}
+*{box-sizing:border-box} body{margin:0;background:#f4f9f5;color:#1a2e1f;font-family:'DM Sans',Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}svg{width:18px;height:18px}#root{min-height:100vh}

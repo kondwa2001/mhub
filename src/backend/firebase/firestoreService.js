@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, getDocs, serverTimestamp, setDoc } from 'firebase/firestore'
+import { addDoc, collection, doc, getDocs, limit, onSnapshot, orderBy, query, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore'
 import { db, hasFirebaseConfig } from './firebaseConfig'
 
 // Use the Firebase SDK so Firestore security rules and Firebase Authentication
@@ -49,4 +49,20 @@ export async function createContactRequest({ donorId, donorName, message, user }
     status: 'new', createdAt: serverTimestamp(),
   })
   return request.id
+}
+
+export function subscribeToNotifications(userId, onChange) {
+  if (!userId || !hasFirebaseConfig || !db) {
+    onChange([])
+    return () => {}
+  }
+  const notifications = query(collection(db, 'users', userId, 'notifications'), orderBy('createdAt', 'desc'), limit(30))
+  return onSnapshot(notifications, (snapshot) => {
+    onChange(snapshot.docs.map((item) => ({ id: item.id, ...item.data() })))
+  }, () => onChange([]))
+}
+
+export async function markNotificationRead(userId, notificationId) {
+  if (!userId || !notificationId || !hasFirebaseConfig || !db) return
+  await updateDoc(doc(db, 'users', userId, 'notifications', notificationId), { read: true })
 }

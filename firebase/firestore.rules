@@ -30,6 +30,14 @@ service cloud.firestore {
       match /savedOpportunities/{opportunityId} {
         allow read, create, update, delete: if ownsUser(userId);
       }
+
+      match /notifications/{notificationId} {
+        allow read: if ownsUser(userId);
+        allow update: if ownsUser(userId)
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read'])
+          && request.resource.data.read is bool;
+        allow create, delete: if false;
+      }
     }
 
     // Members request introductions; contact details never appear in the directory.

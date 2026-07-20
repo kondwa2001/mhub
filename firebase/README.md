@@ -8,7 +8,9 @@ Firestore creates collections when the first document is written; it has no SQL-
 | `activities/{activityId}` | mHub programme/activity calendar | `dueAt` (timestamp), `startsAt` (legacy timestamp), `type`, `title`, `description`, `status` |
 | `users/{uid}` | Firebase Authentication user profile | `displayName`, `email`, `photoURL`, `createdAt`, `updatedAt` |
 | `users/{uid}/savedOpportunities/{opportunityId}` | A user's saved donor opportunity | `opportunityId`, `savedAt`, `notes` |
+| `users/{uid}/notifications/{notificationId}` | Private alert inbox | `type`, `title`, `message`, `read`, `createdAt` |
 | `contactRequests/{requestId}` | Private request for a workspace introduction to a donor | `donorId`, `message`, `requesterId`, `status`, `createdAt` |
+| `sponsorships/{sponsorshipId}` | Curated sponsorship opportunities | `name` or `title`, plus sponsorship details |
 
 ## One-time setup
 
@@ -47,6 +49,15 @@ The seed data is in `seed.firestore.json`. The script converts timestamp fields 
 ## Admin writes
 
 The rules allow writes to `opportunities` and `activities` only for Firebase Auth users with the custom claim `admin: true`. Set that claim from a trusted server using the Firebase Admin SDK; never from the browser.
+
+## Notifications
+
+Deploy the Cloud Functions with the Firestore rules to notify every workspace member when a document is added to `opportunities` (donors) or `sponsorships`. The bell shows unread alerts; selecting one shows its details and marks it read.
+
+```powershell
+cd functions; npm.cmd install; cd ..
+npx.cmd firebase --project YOUR_FIREBASE_PROJECT_ID deploy --only functions:notifyOnNewDonor,functions:notifyOnNewSponsorship,firestore:rules
+```
 
 ## Optional internet donor discovery with Google
 

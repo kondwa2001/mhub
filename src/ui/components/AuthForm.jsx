@@ -69,6 +69,7 @@ export function AuthForm({ onClose, required = false }) {
   return <div className={required ? 'auth-backdrop auth-required' : 'auth-backdrop'} role="presentation" onMouseDown={required ? undefined : onClose}>
     <section className="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title" onMouseDown={(event) => event.stopPropagation()}>
       <button className="auth-close" onClick={onClose} aria-label="Close">×</button>
+      <img src="/mhub-logo.svg" alt="mHub" className="auth-logo" />
       <p className="eyebrow">MHUB OPPORTUNITY DESK</p>
       <h2 id="auth-title">{mode === 'signin' ? 'Welcome back' : mode === 'forgot' ? 'Reset your password' : 'Create your account'}</h2>
       <p className="auth-intro">{mode === 'signin' ? 'Sign in to access your saved opportunities.' : mode === 'forgot' ? 'Enter your email and we will send you a reset link.' : 'Register to save donor opportunities and keep your workspace in sync.'}</p>

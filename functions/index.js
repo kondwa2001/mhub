@@ -1,8 +1,30 @@
 import { onRequest } from 'firebase-functions/v2/https'
+import { onDocumentCreated } from 'firebase-functions/v2/firestore'
 import { defineSecret } from 'firebase-functions/params'
+import { getApps, initializeApp } from 'firebase-admin/app'
+import { FieldValue, getFirestore } from 'firebase-admin/firestore'
 
 const googleApiKey = defineSecret('GOOGLE_CUSTOM_SEARCH_API_KEY')
 const searchEngineId = defineSecret('GOOGLE_PROGRAMMABLE_SEARCH_ENGINE_ID')
+if (!getApps().length) initializeApp()
+
+async function notifyMembers(type, data) {
+  const users = await getFirestore().collection('users').get()
+  const title = type === 'sponsorship' ? 'New sponsorship available' : 'New donor opportunity'
+  const name = data.name || data.title || 'A new opportunity'
+  const message = type === 'sponsorship' ? `${name} is now available for your workspace.` : `${name} has been added to the donor directory.`
+  await Promise.all(users.docs.map((user) => user.ref.collection('notifications').add({
+    type, title, message, read: false, opportunityId: data.id || null, createdAt: FieldValue.serverTimestamp(),
+  })))
+}
+
+export const notifyOnNewDonor = onDocumentCreated('opportunities/{opportunityId}', async (event) => {
+  await notifyMembers('donor', { id: event.params.opportunityId, ...event.data.data() })
+})
+
+export const notifyOnNewSponsorship = onDocumentCreated('sponsorships/{sponsorshipId}', async (event) => {
+  await notifyMembers('sponsorship', { id: event.params.sponsorshipId, ...event.data.data() })
+})
 
 function sourceLocation(item) {
   const metadata = item.pagemap?.metatags?.[0] || {}
