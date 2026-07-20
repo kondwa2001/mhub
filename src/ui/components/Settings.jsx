@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { getAuth, sendPasswordResetEmail, updateProfile } from 'firebase/auth'
+import { EmailAuthProvider, getAuth, reauthenticateWithCredential, sendPasswordResetEmail, updatePassword, updateProfile } from 'firebase/auth'
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore'
 import { db } from '../../backend/firebase/firebaseConfig'
 import { Icon } from './Icon'
 import '../styles/settings.css'
 
-export function Settings({ user, onSignOut }) {
+export function Settings({ user, onSignOut, onNavigate }) {
   const [activeTab, setActiveTab] = useState('profile')
   const [formData, setFormData] = useState({
     name: user?.name || '',
@@ -21,6 +21,7 @@ export function Settings({ user, onSignOut }) {
     newPassword: '',
     confirmPassword: '',
   })
+  const [passwordLoading, setPasswordLoading] = useState(false)
   const [message, setMessage] = useState({ type: '', text: '' })
 
   const handleProfileChange = (e) => {
@@ -107,12 +108,48 @@ export function Settings({ user, onSignOut }) {
       return
     }
     try {
-      // TODO: Integrate with Firebase authentication to change password
+      setPasswordLoading(true)
+      setMessage({ type: '', text: '' })
+
+      const auth = getAuth()
+      const currentUser = auth.currentUser
+
+      if (!currentUser) {
+        setPasswordLoading(false)
+        setMessage({ type: 'error', text: 'Not signed in. Please sign in to change your password.' })
+        return
+      }
+
+      // Re-authenticate the user with their current password before changing it
+      const credential = EmailAuthProvider.credential(currentUser.email, passwordData.currentPassword)
+      await reauthenticateWithCredential(currentUser, credential)
+
+      // Update to the new password in Firebase Auth
+      await updatePassword(currentUser, passwordData.newPassword)
+
       setPasswordData({ currentPassword: '', newPassword: '', confirmPassword: '' })
-      setMessage({ type: 'success', text: 'Password changed successfully!' })
-      setTimeout(() => setMessage({ type: '', text: '' }), 3000)
-    } catch {
-      setMessage({ type: 'error', text: 'Failed to change password. Please try again.' })
+      setPasswordLoading(false)
+      setMessage({ type: 'success', text: 'Password changed successfully! Redirecting to overview…' })
+
+      // Navigate to Overview page after a brief delay so the user sees the success message
+      setTimeout(() => {
+        if (onNavigate) onNavigate('Overview')
+      }, 1200)
+    } catch (error) {
+      setPasswordLoading(false)
+      // Map Firebase error codes to user-friendly messages
+      const errorMessages = {
+        'auth/wrong-password': 'Current password is incorrect. Please try again.',
+        'auth/invalid-credential': 'Current password is incorrect. Please try again.',
+        'auth/weak-password': 'New password is too weak. Use at least 6 characters with a mix of letters and numbers.',
+        'auth/requires-recent-login': 'For security reasons, please sign out and sign in again before changing your password.',
+        'auth/too-many-requests': 'Too many attempts. Please wait a moment and try again.',
+        'auth/user-not-found': 'Account not found. Please sign in again.',
+        'auth/user-disabled': 'This account has been disabled.',
+      }
+      const code = error?.code || ''
+      const message = errorMessages[code] || 'Failed to change password. Please try again.'
+      setMessage({ type: 'error', text: message })
     }
   }
 
@@ -325,9 +362,9 @@ export function Settings({ user, onSignOut }) {
               />
             </div>
 
-            <button className="primary-button" onClick={changePassword}>
-              <Icon name="lock" />
-              Change Password
+            <button className="primary-button" onClick={changePassword} disabled={passwordLoading}>
+              <Icon name={passwordLoading ? 'spark' : 'lock'} />
+              {passwordLoading ? 'Changing password…' : 'Change Password'}
             </button>
 
             <div className="password-actions">
