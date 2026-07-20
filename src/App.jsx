@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useAuth } from './auth/useAuth'
-import { donorOpportunities, mhubActivities } from './backend/data/seedData'
-import { createActivity, createContactRequest, getCollection, subscribeToNotifications } from './backend/firebase/firestoreService'
+import { collaboratorDirectory, donorOpportunities, mhubActivities } from './backend/data/seedData'
+import { createActivity, createContactRequest, getCollaborators, getCollection, subscribeToNotifications } from './backend/firebase/firestoreService'
 import { DonorCard } from './ui/components/DonorCard'
 import { DonorDetails } from './ui/components/DonorDetails'
 import { Icon } from './ui/components/Icon'
@@ -9,6 +9,7 @@ import { ActivityPanel } from './ui/components/ActivityPanel'
 import { AuthForm } from './ui/components/AuthForm'
 import { Settings } from './ui/components/Settings'
 import { Notifications } from './ui/components/Notifications'
+import { CollaboratorsPage } from './ui/components/CollaboratorsPage'
 import './ui/styles/app.css'
 import './ui/styles/activities.css'
 import './ui/styles/discovery.css'
@@ -29,6 +30,10 @@ function App() {
   const [selectedDonor, setSelectedDonor] = useState(null)
   const [activities, setActivities] = useState(mhubActivities)
   const [notifications, setNotifications] = useState([])
+  const [collaborators, setCollaborators] = useState(collaboratorDirectory)
+  // 'seed' until Firestore returns real records, so the UI can be honest about
+  // showing placeholder data rather than passing it off as the real directory.
+  const [collaboratorSource, setCollaboratorSource] = useState('seed')
 
   useEffect(() => {
     if (!user?.uid) return undefined
@@ -58,6 +63,23 @@ function App() {
     })
   }, [])
 
+  useEffect(() => {
+    getCollaborators().then((items) => {
+      if (!items.length) return
+      setCollaborators(items)
+      setCollaboratorSource('firestore')
+    }).catch(() => {
+      // Placeholder collaborators keep matching demonstrable before seeding.
+    })
+  }, [])
+
+  const addCollaborator = (collaborator) => {
+    // The first real record retires the placeholders rather than sitting
+    // alongside them, so the directory never mixes sample and live data.
+    setCollaborators((current) => (collaboratorSource === 'seed' ? [collaborator] : [...current, collaborator]))
+    setCollaboratorSource('firestore')
+  }
+
   const donors = useMemo(() => directory.filter((donor) => {
     const searchable = `${donor.name} ${donor.focus} ${donor.region} ${donor.description || ''}`.toLowerCase()
     const matchesSearch = searchable.includes(query.toLowerCase())
@@ -86,13 +108,13 @@ function App() {
 
   const donorDirectory = <section className="discover"><div className="section-heading"><div><p className="eyebrow">YOUR DONOR DIRECTORY</p><h2>Find a donor</h2></div><button className="text-button" onClick={() => { setQuery(''); setDonorFilter('Best match') }}>View all <Icon name="arrow" /></button></div><div className="search-row"><Icon name="search" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search by donor, focus area, or region" aria-label="Search donor directory" /></div><p className="search-help">Search your private directory, then select a donor to review their profile or request an introduction.</p><div className="chips">{['Best match', 'Technology', 'Youth', 'Climate', 'Open now'].map((filter) => <button key={filter} className={donorFilter === filter ? 'chip active' : 'chip'} onClick={() => setDonorFilter(filter)}>{filter}</button>)}</div><div className="curated-results"><p className="eyebrow">{directoryState === 'loading' ? 'LOADING DIRECTORY' : `${donors.length} DIRECTORY ${donors.length === 1 ? 'MATCH' : 'MATCHES'}`}</p><div className="donor-grid">{donors.map((donor) => <DonorCard key={donor.id} donor={donor} saved={saved.has(donor.id)} onSave={toggleSaved} onOpen={setSelectedDonor} />)}</div>{directoryState === 'ready' && donors.length === 0 && <p className="discovery-message">No donors match that search. Try a different name, focus area, or region.</p>}</div></section>
   const savedDonors = directory.filter((donor) => saved.has(donor.id))
-  const pageContent = tab === 'Activities' ? <ActivityPanel activities={activities} onCreate={addActivity} /> : tab === 'Donor finder' ? <><section className="welcome"><div><p className="eyebrow">OPPORTUNITY INTELLIGENCE</p><h1>Donor finder</h1><p>Explore and connect with aligned funding opportunities.</p></div></section>{donorDirectory}</> : tab === 'Saved' ? <section className="discover"><div className="section-heading"><div><p className="eyebrow">YOUR SHORTLIST</p><h2>Saved opportunities</h2></div></div><div className="donor-grid">{savedDonors.map((donor) => <DonorCard key={donor.id} donor={donor} saved onSave={toggleSaved} onOpen={setSelectedDonor} />)}</div>{savedDonors.length === 0 && <p className="discovery-message">Save a donor opportunity to keep it in your shortlist.</p>}</section> : tab === 'Settings' ? <Settings user={user} onSignOut={signOut} onNavigate={selectNavigation} /> : <><section className="welcome"><div><p className="eyebrow">OPPORTUNITY INTELLIGENCE</p><h1>Good morning, {user.name?.split(' ')[0] || 'MHub'} <span>✦</span></h1><p>Find aligned funders and keep your team close to the work that matters.</p></div><button className="primary-button" onClick={() => selectNavigation('Donor finder')}><Icon name="spark" />Find a donor</button></section><section className="metrics" aria-label="Opportunity metrics"><div className="metric"><span className="metric-icon green"><Icon name="target" /></span><div><strong>{directory.length}</strong><p>Potential donors</p><small>Private donor directory</small></div></div><div className="metric"><span className="metric-icon purple"><Icon name="calendar" /></span><div><strong>08</strong><p>Active programmes</p><small>3 updated recently</small></div></div><div className="metric"><span className="metric-icon orange"><Icon name="clock" /></span><div><strong>05</strong><p>Deadlines ahead</p><small>Next: 14 May</small></div></div></section></>
+  const pageContent = tab === 'Activities' ? <ActivityPanel activities={activities} onCreate={addActivity} /> : tab === 'Donor finder' ? <><section className="welcome"><div><p className="eyebrow">OPPORTUNITY INTELLIGENCE</p><h1>Donor finder</h1><p>Explore and connect with aligned funding opportunities.</p></div></section>{donorDirectory}</> : tab === 'Saved' ? <section className="discover"><div className="section-heading"><div><p className="eyebrow">YOUR SHORTLIST</p><h2>Saved opportunities</h2></div></div><div className="donor-grid">{savedDonors.map((donor) => <DonorCard key={donor.id} donor={donor} saved onSave={toggleSaved} onOpen={setSelectedDonor} />)}</div>{savedDonors.length === 0 && <p className="discovery-message">Save a donor opportunity to keep it in your shortlist.</p>}</section> : tab === 'Collaborators' ? <CollaboratorsPage activities={activities} collaborators={collaborators} isSampleData={collaboratorSource === 'seed'} onCollaboratorAdded={addCollaborator} /> : tab === 'Settings' ? <Settings user={user} onSignOut={signOut} onNavigate={selectNavigation} /> : <><section className="welcome"><div><p className="eyebrow">OPPORTUNITY INTELLIGENCE</p><h1>Good morning, {user.name?.split(' ')[0] || 'MHub'} <span>✦</span></h1><p>Find aligned funders and keep your team close to the work that matters.</p></div><button className="primary-button" onClick={() => selectNavigation('Donor finder')}><Icon name="spark" />Find a donor</button></section><section className="metrics" aria-label="Opportunity metrics"><div className="metric"><span className="metric-icon green"><Icon name="target" /></span><div><strong>{directory.length}</strong><p>Potential donors</p><small>Private donor directory</small></div></div><div className="metric"><span className="metric-icon purple"><Icon name="calendar" /></span><div><strong>08</strong><p>Active programmes</p><small>3 updated recently</small></div></div><div className="metric"><span className="metric-icon orange"><Icon name="clock" /></span><div><strong>05</strong><p>Deadlines ahead</p><small>Next: 14 May</small></div></div></section></>
 
   return <main className="app-shell">
     <aside className="sidebar">
       <a className="brand" href="#overview" onClick={(event) => { event.preventDefault(); selectNavigation('Overview') }} aria-label="MHub opportunities home"><img src="/mhub-logo.svg" alt="mHub" /></a>
       <div className="workspace"><span>WORKSPACE</span><button>Opportunity desk <Icon name="chevron" /></button></div>
-      <nav aria-label="Main navigation">{['Overview', 'Donor finder', 'Activities', 'Saved', 'Settings'].map((item) => <button key={item} className={tab === item ? 'nav-item active' : 'nav-item'} onClick={() => selectNavigation(item)}><Icon name={item === 'Overview' ? 'grid' : item === 'Donor finder' ? 'search' : item === 'Activities' ? 'calendar' : item === 'Saved' ? 'bookmark' : 'settings'} />{item}{item === 'Saved' && saved.size > 0 && <b>{saved.size}</b>}</button>)}</nav>
+      <nav aria-label="Main navigation">{['Overview', 'Donor finder', 'Collaborators', 'Activities', 'Saved', 'Settings'].map((item) => <button key={item} className={tab === item ? 'nav-item active' : 'nav-item'} onClick={() => selectNavigation(item)}><Icon name={item === 'Overview' ? 'grid' : item === 'Donor finder' ? 'search' : item === 'Collaborators' ? 'user' : item === 'Activities' ? 'calendar' : item === 'Saved' ? 'bookmark' : 'settings'} />{item}{item === 'Saved' && saved.size > 0 && <b>{saved.size}</b>}</button>)}</nav>
       <div className="sidebar-bottom"><button className="nav-item logout-button" onClick={signOut}><Icon name="logout" />Log out</button><div className="profile"><div className="avatar">{user.name?.[0] || 'M'}</div><div><strong>{user.name || 'MHub team'}</strong><small>{user.email}</small></div></div></div>
     </aside>
     <section className="content">
