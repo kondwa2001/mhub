@@ -22,7 +22,14 @@ npx.cmd firebase --project YOUR_FIREBASE_PROJECT_ID deploy --only firestore:rule
 
 `firebase.json` already points Firebase CLI to the rules and indexes files, so no interactive initialization is required.
 
-Enable **Authentication > Sign-in method > Email/Password** before deploying these rules. The application must use Firebase Authentication; its current local demo sign-in does not send a Firebase user token.
+Enable **Authentication > Sign-in method > Email/Password** before deploying these rules. In the Firebase Console:
+
+1. Open your project and go to **Authentication**.
+2. Open the **Sign-in method** tab.
+3. Find **Email/Password** and set it to **Enabled**.
+4. Save the change.
+
+The application must use Firebase Authentication; its current local demo sign-in does not send a Firebase user token.
 
 ## Add the initial documents
 
