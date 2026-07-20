@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut as firebaseSignOut, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signOut as firebaseSignOut, updateProfile } from 'firebase/auth'
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore'
 import { SessionContext } from './sessionContext'
 import { auth, db, hasFirebaseConfig } from '../backend/firebase/firebaseConfig'
@@ -55,6 +55,15 @@ export function AuthProvider({ children }) {
     return credential.user
   }
 
+  const resetPassword = async ({ email }) => {
+    if (!hasFirebaseConfig || !auth) {
+      return { ok: true }
+    }
+
+    await sendPasswordResetEmail(auth, email)
+    return { ok: true }
+  }
+
   const signOut = async () => {
     if (!hasFirebaseConfig || !auth) {
       setUser(null)
@@ -64,5 +73,5 @@ export function AuthProvider({ children }) {
     await firebaseSignOut(auth)
   }
 
-  return <SessionContext.Provider value={{ user, loading, register, signIn, signOut }}>{children}</SessionContext.Provider>
+  return <SessionContext.Provider value={{ user, loading, register, signIn, resetPassword, signOut }}>{children}</SessionContext.Provider>
 }
