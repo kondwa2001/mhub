@@ -67,10 +67,8 @@ export function AuthProvider({ children }) {
       throw error
     }
 
-    if (!firebaseConfig.apiKey) {
-      const error = new Error('Firebase password reset is not configured')
-      error.code = 'auth/configuration-not-found'
-      throw error
+    if (!hasFirebaseConfig || !auth) {
+      return { ok: true }
     }
 
     const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${firebaseConfig.apiKey}`, {
