@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signOut as firebaseSignOut, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut as firebaseSignOut, updateProfile } from 'firebase/auth'
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore'
 import { SessionContext } from './sessionContext'
-import { auth, db, hasFirebaseConfig } from '../backend/firebase/firebaseConfig'
+import { auth, db, hasFirebaseConfig, firebaseConfig } from '../backend/firebase/firebaseConfig'
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => hasFirebaseConfig ? null : {
@@ -31,16 +31,23 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
-  const register = async ({ name, email, password }) => {
+  const register = async ({ name, email, password, organization }) => {
     if (!hasFirebaseConfig || !auth || !db) {
-      const localUser = { uid: 'local-demo-user', name: name.trim() || 'Demo user', email: email.trim() || 'demo@example.com' }
+      const localUser = { uid: 'local-demo-user', name: name.trim() || 'Demo user', email: email.trim() || 'demo@example.com', organization: organization?.trim() || '' }
       setUser(localUser)
       return localUser
     }
 
     const credential = await createUserWithEmailAndPassword(auth, email, password)
     await updateProfile(credential.user, { displayName: name })
-    await setDoc(doc(db, 'users', credential.user.uid), { displayName: name, email: credential.user.email, photoURL: null, createdAt: serverTimestamp(), updatedAt: serverTimestamp() }, { merge: true })
+    await setDoc(doc(db, 'users', credential.user.uid), {
+      displayName: name,
+      email: credential.user.email,
+      organization: organization?.trim() || null,
+      photoURL: null,
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    }, { merge: true })
     return credential.user
   }
 
@@ -56,11 +63,41 @@ export function AuthProvider({ children }) {
   }
 
   const resetPassword = async ({ email }) => {
-    if (!hasFirebaseConfig || !auth) {
-      return { ok: true }
+    const normalizedEmail = email?.trim()
+
+    if (!normalizedEmail) {
+      const error = new Error('Email is required')
+      error.code = 'auth/missing-email'
+      throw error
     }
 
-    await sendPasswordResetEmail(auth, email)
+    if (!firebaseConfig.apiKey) {
+      const error = new Error('Firebase password reset is not configured')
+      error.code = 'auth/configuration-not-found'
+      throw error
+    }
+
+    const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${firebaseConfig.apiKey}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ requestType: 'PASSWORD_RESET', email: normalizedEmail }),
+    })
+
+    const data = await response.json().catch(() => ({}))
+
+    if (!response.ok) {
+      const message = data?.error?.message || 'Unable to send reset email'
+      const error = new Error(message)
+      const codeMap = {
+        EMAIL_NOT_FOUND: 'auth/user-not-found',
+        INVALID_EMAIL: 'auth/invalid-email',
+        MISSING_EMAIL: 'auth/missing-email',
+        TOO_MANY_ATTEMPTS_TRY_LATER: 'auth/too-many-requests',
+      }
+      error.code = codeMap[message] || 'auth/reset-failed'
+      throw error
+    }
+
     return { ok: true }
   }
 

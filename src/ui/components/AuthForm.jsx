@@ -24,6 +24,7 @@ export function AuthForm({ onClose, required = false }) {
   const [mode, setMode] = useState('signin')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [organization, setOrganization] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
@@ -33,7 +34,7 @@ export function AuthForm({ onClose, required = false }) {
     event.preventDefault(); setError(''); setSuccess(''); setSubmitting(true)
     try {
       if (mode === 'register') {
-        await register({ name: name.trim(), email: email.trim(), password })
+        await register({ name: name.trim(), email: email.trim(), password, organization: organization.trim() })
         setMode('signin')
         setPassword('')
         setSuccess('Account created. Please sign in to continue.')
@@ -60,6 +61,7 @@ export function AuthForm({ onClose, required = false }) {
       <p className="auth-intro">{mode === 'signin' ? 'Sign in to access your saved opportunities.' : mode === 'forgot' ? 'Enter your email and we will send you a reset link.' : 'Register to save donor opportunities and keep your workspace in sync.'}</p>
       <form className="auth-form" onSubmit={submit}>
         {mode === 'register' && <label>Full name<input value={name} onChange={(event) => setName(event.target.value)} required autoComplete="name" /></label>}
+        {mode === 'register' && <label>Company or organisation<input value={organization} onChange={(event) => setOrganization(event.target.value)} autoComplete="organization" placeholder="Optional" /></label>}
         <label>Email address<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} required autoComplete="email" /></label>
         {mode !== 'forgot' && <label>Password<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required minLength="6" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} /></label>}
         {error && <p className="auth-error" role="alert">{error}</p>}
