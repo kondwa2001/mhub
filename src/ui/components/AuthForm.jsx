@@ -40,9 +40,11 @@ export function AuthForm({ onClose, required = false }) {
         setPassword('')
         setSuccess('Account created. Please sign in to continue.')
       } else if (mode === 'forgot') {
-        await resetPassword({ email: email.trim() })
+        const result = await resetPassword({ email: email.trim() })
         setPassword('')
-        setSuccess('If an account exists for that email, a reset link has been sent.')
+        setSuccess(result?.demoMode
+          ? 'Password reset is not available in local demo mode. Set up Firebase or use the app with the demo account.'
+          : `If an account exists for ${email.trim()}, a reset link has been sent.`)
       } else {
         await signIn({ email: email.trim(), password })
         onClose?.()

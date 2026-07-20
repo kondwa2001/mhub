@@ -68,7 +68,7 @@ export function AuthProvider({ children }) {
     }
 
     if (!hasFirebaseConfig || !auth) {
-      return { ok: true }
+      return { ok: true, demoMode: true }
     }
 
     const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${firebaseConfig.apiKey}`, {
