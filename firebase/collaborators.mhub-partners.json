@@ -1,0 +1,854 @@
+[
+  {
+    "name": "Acades",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/9M9mT50TgC6CmkqFpbnAkMUy813kBSUwBwlvzjEz.png"
+  },
+  {
+    "name": "ActionAid",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/ISEsoMrp1y2IkRtcGHjSYZEUtfZXGwO6HVvmWfu2.png"
+  },
+  {
+    "name": "Africa Code Week",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/oVVY1NCK40TqwiguOXdY7bziHNFcTThrThXmBHlt.png"
+  },
+  {
+    "name": "ADB",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/yGXh3WhsDN3EbtU7qb28zcsmlYR4F2YGVLlQ9JqF.png"
+  },
+  {
+    "name": "AfriLabs",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/cu68ZMt6yD7olLWU7VuNLW9azH4NyFCfUIhd8IsO.png"
+  },
+  {
+    "name": "Ciat",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/yVuYMJf3bWoylgLzQPyDzbop8BfFCK3hGEQRGoA4.jpg"
+  },
+  {
+    "name": "Awe",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/XtQxakrYKD1XY16zZRjfy381ovkZGZmGs6VxuDSF.png"
+  },
+  {
+    "name": "Basel Institutte",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/NHRRRN4u2tu7aQrt7cCRm2Rvx6fHwE1Nkb0CGGs7.png"
+  },
+  {
+    "name": "BongoHive",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/PpqCcwo4Un3rpoQxUNSi1gNSDeH1ER3wMQV9IrD9.png"
+  },
+  {
+    "name": "British Council",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/PJX4fjj36Mo1zSzIY6bUqJEO92bsPLQAIh71R710.jpg"
+  },
+  {
+    "name": "Care Malawi",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/S45IWPE2AfslQyI4RYGoEIj791cseYkCej9spbFk.png"
+  },
+  {
+    "name": "CCJP",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/Mugcqs16W9fVvmZUzWOzRarAvWr1m1PzZI3MRxBa.jpg"
+  },
+  {
+    "name": "Code Africa",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/jP2UMF8SkurpOUXxEHU15EZTzZu7QQkSGSDtJlpL.png"
+  },
+  {
+    "name": "Total Africa",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/JC7oV6aDOOHKnsn5nKfCAZalq8WtQC1Qif2WGrDP.jpg"
+  },
+  {
+    "name": "Crecom",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/yNEzxioM6uimEX7F5soOSTbl6WreOskflKCY4Vue.png"
+  },
+  {
+    "name": "Dot",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/k339R12zeue7QqP9PuRBQvRJfrWruYmjGoIhpFeF.png"
+  },
+  {
+    "name": "dzuka",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/QyMiq48sShm5KtKLdVCAarNoUnWD5K7VpUkgVSKi.jpg"
+  },
+  {
+    "name": "Eco Bank",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/uhMzBOMsSw3rBaqb7DMkEsUblnr7snoZpSU5HQBm.png"
+  },
+  {
+    "name": "EU",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/oJOmMrO6GLIC0F5QvUmoAsulWc26WWCWU6fb0XMP.jpg"
+  },
+  {
+    "name": "FMT",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/M6FWFUNc6reMMjXbwBiNmyhvV4zOIzTVNRiijw6f.jpg"
+  },
+  {
+    "name": "GIZ",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/dInqQQ1p36iS4smO8evVyZhZi1mhZ3qDQD34XQwG.jpg"
+  },
+  {
+    "name": "GJU",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/SwBe1FOl2E0BVk5ZG5mrJqiIxsF1JPnaj6A10lAm.jpg"
+  },
+  {
+    "name": "GOOGLE E SKILLS",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/nMHsHo7Sl2VlYWvpnIp7eMKv63Nqtd7HVC2Avf4r.png"
+  },
+  {
+    "name": "Heifer",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/HjzvcP9UA2EQjueWNCSQ4kdTWLo0HVOJ36aPCkij.png"
+  },
+  {
+    "name": "Hivos",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/nOxazs1Fecdq3raDkCFPnGpprYkXVLo7anG84nGU.png"
+  },
+  {
+    "name": "Kweza",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/hdQaC3Jk6u4ZVFfhcE29sTEhXDOpRfq8ql9IJG8E.jpg"
+  },
+  {
+    "name": "Mastercard",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/KyEB9glCz7etKTxP9PQCItbgjmndvIYDyO8Y6gns.png"
+  },
+  {
+    "name": "Mra",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/K4oL5IRI2UHZGWb8R2dtNsO2ZQeQFvQxH8VuyvM5.png"
+  },
+  {
+    "name": "Mubas",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/oFKEmO0ClkSkvcQWFUiI4v7oZAVNWy0DyGK6UgBn.png"
+  },
+  {
+    "name": "Must",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/PrccgoDJ97BfHhJmvHHaXqly6KA9s6abmJSqojse.png"
+  },
+  {
+    "name": "Malawi Government",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/tXzY7xBVe3vGCTCLdxNarAnoKJLnqUzG7eg72VKJ.png"
+  },
+  {
+    "name": "Mzuzu University",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/2NkrYuWxZ216YxjzEY9jBLijLHLeOm0S3o4s8tnP.jpg"
+  },
+  {
+    "name": "National Bank",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/FaSIsPD8JgZgIUKzKWFb6yqHMmtsRDP0qAMSJdG7.jpg"
+  },
+  {
+    "name": "NDI",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/O0hZt4R7swZcBpYwF8eYOcxRdrhYpalq6AWRo2B6.png"
+  },
+  {
+    "name": "NICE",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/aBpzkpsNUJNbHS0PTEBQyzeXsHYeydbTKXYp13td.jpg"
+  },
+  {
+    "name": "NOWEIGAIN",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/txHrUgn08mMiSmrtzpVxiYZqpytfJOKgm3nUhYx0.png"
+  },
+  {
+    "name": "NYCOM",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/QAlyEAhAQ9i3JbGq3EqDRgP5eNOkgeiql40MaJHg.jpg"
+  },
+  {
+    "name": "OSISA",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/PPhHPHjpy7e18NTMvkpjamxi74mHIDqeQ9wWm37L.png"
+  },
+  {
+    "name": "OXFARM",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/cyKFSk21J7yIuGEnPSGFQe8uSRzulhYkvwzRT2zG.png"
+  },
+  {
+    "name": "PAC",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/cMdLiIoOsnz42E4vSVcymRGiq3laxDdmNOH6sa9v.png"
+  },
+  {
+    "name": "PLAN",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/jrkKmDiKVtZ79JqGy6hXqwBGBEk4a8TpYVUZrpXj.png"
+  },
+  {
+    "name": "PPPC",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/EHuoatwIv2fhjsSlFjYDz7pvkXPXKUZz0afgaZM8.png"
+  },
+  {
+    "name": "Qoncept Creative",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/PifZ0KIXdWasqO4jK8VcQOnuM887ZaGeY56sVcWr.jpg"
+  },
+  {
+    "name": "SAIS",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/lfOSo1Cwvt9EBBL48XURecaTVLBwewZfIe1qVy0o.jpg"
+  },
+  {
+    "name": "SANBIO",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/x857Cl7ZXnw5vKtiG6y1Qer3YxHTKQXhApV49z3p.png"
+  },
+  {
+    "name": "SEGAL",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/iAV3IRqop58N432uRrcbF2RuOLTR4H6i0LitvPoC.png"
+  },
+  {
+    "name": "SHA",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/UAcoLeGlaPXJuqDlCW5NPo1zDEqKtqR3yw4CRgij.png"
+  },
+  {
+    "name": "SMEDI",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/SxGnqcynx7upvcgzwQgoZ85C1izwqQk31jXyLZAY.png"
+  },
+  {
+    "name": "INCUBATOR",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/AEdUhliR6POmcV6L11OJbfXkc6FiWmtahIYL7UIH.png"
+  },
+  {
+    "name": "STANDARD BANK",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/94j50ithdvQgk3fj4Jlxn51DbmNIMZY5K4i03jHo.jpg"
+  },
+  {
+    "name": "Tratech",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/XpZkkZjnUUChYVIXpDbyzzHRAlscwtQX96O8RxLp.png"
+  },
+  {
+    "name": "tvt",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/RwouQA9y2Wgoatwv47UfzerDiOGoQHvBPOA23mXt.jpg"
+  },
+  {
+    "name": "Timveni",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/VjznyDQ9J2LkI7T3BzjCCyGOmCfstvzxCeJwoVzb.png"
+  },
+  {
+    "name": "USAID",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/L8cVYSswfJSEnMp1K6UI4GbKrKDPVGrVivFQstXY.png"
+  },
+  {
+    "name": "UKAID",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/iw1K9e9EBebvfWc966Td3Y20Y2kS2bzmcPFkxyVz.jpg"
+  },
+  {
+    "name": "UN Women",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/Q9QJzASP9T10vcnITBoKaijVKsL8F1Qu2LWPzbOp.png"
+  },
+  {
+    "name": "UNDP",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/t5pj72PxLN6IlGahhQRX5vDHfC5r9pipO1J2ce86.png"
+  },
+  {
+    "name": "UNICAF",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/kQMAB2HWHamqVVheJv8tS6IRWga1f1dXVaUE8H17.png"
+  },
+  {
+    "name": "UNICEF",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/BU7pqn9WEUKdeur6pneiFkaYeO7Dx8LQuvJ9fQ5x.png"
+  },
+  {
+    "name": "US EMBASSY",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/l9AAhVPFFbQMl2L6tpbtwBOw4gGK5Y7IAQspXu4h.png"
+  },
+  {
+    "name": "wri",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/2wg03ta1xwMX01xGopOXB8FVQ0OEdFJgcqgsZV1h.png"
+  },
+  {
+    "name": "World Bank",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/51D1pmI0v5KWzOfrz0yQoaH1TV6LVYEBsHIHpcIP.png"
+  },
+  {
+    "name": "WUSC",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/msqyAn5GaJKyQwO8mOmytTUAYjY9TD9i5bTufXke.jpg"
+  },
+  {
+    "name": "Zanthito",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/tm8bg1E1GMkztB0xZkPxBHzromW9ZnFoRclZHVpK.png"
+  },
+  {
+    "name": "Zodiak",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/ZTJJ8iJi8m5hVyprTJQ03fvtTi6csHZnGkqNcx6g.jpg"
+  },
+  {
+    "name": "Indigo",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/E0ZoXsxTZwjBOFcTZEBB5aNxMMlDEj26vOr5Euoj.png"
+  },
+  {
+    "name": "Global Partners Digital",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/Yz02ryeYvD3gjm2vMSsgidm1sPngJ6PvzQrfY2RT.jpg"
+  },
+  {
+    "name": "Facebook",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/1zeBZPC9myMTIuwKVayysSwZ2qlKoQoVrgdpaBrq.png"
+  },
+  {
+    "name": "SAP",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/5Ay4jFhrSyUNfOXODhvUHdz7pC42TJaXbvFbQ8nk.png"
+  },
+  {
+    "name": "Center for Youth and Development",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/OPAM9FiGs9NLMirfy4p22zWyQ03JyPk87mwcMefI.jpg"
+  },
+  {
+    "name": "Emerge Livelihood",
+    "summary": "",
+    "focusTags": [],
+    "supportTypes": [],
+    "regions": [
+      "Malawi"
+    ],
+    "website": "",
+    "contactEmail": "",
+    "logo": "https://mhubmw.com/storage/logos/rjWxC6cgOi0X62QZkcpj8qq700jZFoFys34ERr6h.png"
+  }
+]

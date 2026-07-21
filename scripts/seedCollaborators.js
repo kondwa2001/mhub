@@ -3,6 +3,7 @@
  *
  *   node --env-file=.env.local scripts/seedCollaborators.js collaborators.json
  *   node --env-file=.env.local scripts/seedCollaborators.js collaborators.json --dry-run
+ *   node --env-file=.env.local scripts/seedCollaborators.js collaborators.json --allow-missing-tags
  *
  * The input file is a JSON array of records:
  *
@@ -26,6 +27,13 @@
  * Firestore security rules apply exactly as they do in the browser. If your
  * rules require an authenticated user (they should), set SEED_EMAIL and
  * SEED_PASSWORD in the env file and the script signs in first.
+ *
+ * --allow-missing-tags skips the "needs at least one focusTags entry" check.
+ * Use it only for a bulk import of confirmed real organisations whose focus
+ * areas genuinely aren't known yet (e.g. a partner-logo list with no
+ * descriptions) -- every tag that IS present is still validated. Records
+ * seeded this way won't appear in donor matching until someone who knows the
+ * partnership adds focus areas through the app's "Add collaborator" form.
  */
 import { readFileSync } from 'node:fs'
 import { initializeApp } from 'firebase/app'
@@ -35,6 +43,7 @@ import { isFocusArea, isSupportType } from '../src/backend/data/focusAreas.js'
 
 const [, , inputPath, ...flags] = process.argv
 const dryRun = flags.includes('--dry-run')
+const allowMissingTags = flags.includes('--allow-missing-tags')
 
 if (!inputPath) {
   console.error('Usage: node --env-file=.env.local scripts/seedCollaborators.js <file.json> [--dry-run]')
@@ -50,7 +59,7 @@ function problemsWith(record, index) {
   if (!record.name?.trim()) problems.push(`${where}: missing "name"`)
 
   const tags = Array.isArray(record.focusTags) ? record.focusTags : []
-  if (!tags.length) problems.push(`${where}: needs at least one focusTags entry`)
+  if (!tags.length && !allowMissingTags) problems.push(`${where}: needs at least one focusTags entry`)
   for (const tag of tags) {
     if (!isFocusArea(tag)) problems.push(`${where}: "${tag}" is not one of mHub's focus areas`)
   }
@@ -84,9 +93,13 @@ if (problems.length) {
 }
 
 console.log(`${records.length} record(s) validated against mHub's focus areas.`)
+if (allowMissingTags) {
+  const untagged = records.filter((record) => !record.focusTags?.length)
+  if (untagged.length) console.log(`${untagged.length} record(s) have no focus areas and won't appear in donor matching until tagged.`)
+}
 
 if (dryRun) {
-  for (const record of records) console.log(`  would write: ${record.name} [${record.focusTags.join(', ')}]`)
+  for (const record of records) console.log(`  would write: ${record.name} [${(record.focusTags || []).join(', ') || 'untagged'}]`)
   console.log('\nDry run -- nothing written.')
   process.exit(0)
 }
@@ -127,11 +140,12 @@ for (const record of records) {
   await addDoc(collection(db, 'collaborators'), {
     name: record.name.trim(),
     summary: record.summary?.trim() || '',
-    focusTags: record.focusTags,
+    focusTags: record.focusTags || [],
     supportTypes: record.supportTypes || [],
     regions: record.regions || [],
     website: record.website?.trim() || '',
     contactEmail: record.contactEmail?.trim() || '',
+    logo: record.logo?.trim() || '',
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   })

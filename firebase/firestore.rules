@@ -40,6 +40,14 @@ service cloud.firestore {
       }
     }
 
+    // Partner/collaborator directory, curated from mHub's own partner list.
+    // Read is open to signed-in workspace users for donor matching; only
+    // administrators (set with a Firebase custom claim) can curate it.
+    match /collaborators/{collaboratorId} {
+      allow read: if signedIn();
+      allow create, update, delete: if signedIn() && request.auth.token.admin == true;
+    }
+
     // Members request introductions; contact details never appear in the directory.
     match /contactRequests/{requestId} {
       allow create: if signedIn()
