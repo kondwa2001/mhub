@@ -13,13 +13,17 @@
   },
   {
     "name": "ActionAid",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "ActionAid Malawi is part of a global justice federation working with grassroots communities across Malawi's poorest and most remote areas to advance social justice, gender equality, land rights and access to education.",
+    "focusTags": [
+      "women-girls"
+    ],
+    "supportTypes": [
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://malawi.actionaid.org/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/ISEsoMrp1y2IkRtcGHjSYZEUtfZXGwO6HVvmWfu2.png"
   },
@@ -37,25 +41,38 @@
   },
   {
     "name": "ADB",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The African Development Bank (AfDB) is a regional multilateral development finance institution that assists its African member countries, including Malawi, with investments in agro-industrialisation, private sector growth, infrastructure and job creation.",
+    "focusTags": [
+      "finance",
+      "jobs"
+    ],
+    "supportTypes": [
+      "funding"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.afdb.org/en/countries/southern-africa/malawi",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/yGXh3WhsDN3EbtU7qb28zcsmlYR4F2YGVLlQ9JqF.png"
   },
   {
     "name": "AfriLabs",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
-    "regions": [
-      "Malawi"
+    "summary": "AfriLabs is a pan-African network connecting over 500 technology and innovation hubs across more than 50 countries, supporting entrepreneurs with skills, funding connections and networks to help them scale their ventures.",
+    "focusTags": [
+      "innovation",
+      "entrepreneurship",
+      "incubation"
     ],
-    "website": "",
+    "supportTypes": [
+      "mentorship",
+      "market-access"
+    ],
+    "regions": [
+      "Malawi",
+      "Africa"
+    ],
+    "website": "https://afrilabs.com/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/cu68ZMt6yD7olLWU7VuNLW9azH4NyFCfUIhd8IsO.png"
   },
@@ -109,13 +126,19 @@
   },
   {
     "name": "British Council",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The British Council is the United Kingdom's international organisation for cultural relations and educational opportunities, active in Malawi through programmes in education, arts and culture, and skills and employability such as the EU-funded Zantchito Skills for Jobs TVET project.",
+    "focusTags": [
+      "education",
+      "creative",
+      "jobs"
+    ],
+    "supportTypes": [
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.britishcouncil.mw/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/PJX4fjj36Mo1zSzIY6bUqJEO92bsPLQAIh71R710.jpg"
   },
@@ -205,26 +228,36 @@
   },
   {
     "name": "Eco Bank",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "Ecobank Malawi is the local subsidiary of Ecobank Transnational Incorporated, a pan-African banking group operating in 33 African countries, offering commercial and digital banking services.",
+    "focusTags": [
+      "finance"
+    ],
+    "supportTypes": [
+      "funding"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://ecobank.com/mw/personal-banking",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/uhMzBOMsSw3rBaqb7DMkEsUblnr7snoZpSU5HQBm.png"
   },
   {
     "name": "EU",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The Delegation of the European Union to Malawi is the EU's diplomatic representation in the country, implementing EU development cooperation programmes in areas such as education, governance, climate action and public health.",
+    "focusTags": [
+      "education",
+      "climate",
+      "health"
+    ],
+    "supportTypes": [
+      "funding"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
-    "contactEmail": "",
+    "website": "https://www.eeas.europa.eu/malawi_en",
+    "contactEmail": "delegation-malawi@eeas.europa.eu",
     "logo": "https://mhubmw.com/storage/logos/oJOmMrO6GLIC0F5QvUmoAsulWc26WWCWU6fb0XMP.jpg"
   },
   {
@@ -241,26 +274,37 @@
   },
   {
     "name": "GIZ",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit) is Germany's federal enterprise for international development cooperation, implementing projects worldwide, including in Malawi, across areas such as governance, climate protection and sustainable economic development.",
+    "focusTags": [
+      "climate",
+      "entrepreneurship"
+    ],
+    "supportTypes": [
+      "funding",
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.giz.de/en/worldwide/396.html",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/dInqQQ1p36iS4smO8evVyZhZi1mhZ3qDQD34XQwG.jpg"
   },
   {
     "name": "GJU",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The Gender & Justice Unit (GJU) is a women-led Malawian organisation using legal empowerment as a catalyst for gender equality, access to justice, and social and climate justice, working through litigation, research, community mobilisation and partnerships.",
+    "focusTags": [
+      "women-girls"
+    ],
+    "supportTypes": [
+      "research",
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
-    "contactEmail": "",
+    "website": "https://genderandjustice.org/",
+    "contactEmail": "info@genderandjustice.org",
     "logo": "https://mhubmw.com/storage/logos/SwBe1FOl2E0BVk5ZG5mrJqiIxsF1JPnaj6A10lAm.jpg"
   },
   {
@@ -277,25 +321,37 @@
   },
   {
     "name": "Heifer",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "Heifer International works with smallholder farmers in Malawi to build profitable agribusinesses across value chains such as dairy, beef and crops, helping them earn sustainable incomes and overcome poverty.",
+    "focusTags": [
+      "agritech"
+    ],
+    "supportTypes": [
+      "training",
+      "market-access"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
-    "contactEmail": "",
+    "website": "https://www.heifer.org/our-work/where-we-work/malawi.html",
+    "contactEmail": "heifer.malawi@heifer.org",
     "logo": "https://mhubmw.com/storage/logos/HjzvcP9UA2EQjueWNCSQ4kdTWLo0HVOJ36aPCkij.png"
   },
   {
     "name": "Hivos",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "Hivos is an international organisation working towards a world where people can realise their full potential, active in Southern Africa including Malawi on programmes covering youth empowerment, women's leadership, climate resilience and civic space.",
+    "focusTags": [
+      "youth",
+      "women-girls",
+      "climate"
+    ],
+    "supportTypes": [
+      "funding",
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://hivos.org/region/southern-africa/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/nOxazs1Fecdq3raDkCFPnGpprYkXVLo7anG84nGU.png"
   },
@@ -313,109 +369,140 @@
   },
   {
     "name": "Mastercard",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The Mastercard Foundation is a global foundation working to enable young people in Africa, and Indigenous youth in Canada, to access dignified and fulfilling work, with a goal of helping 30 million young people access work by 2030.",
+    "focusTags": [
+      "youth",
+      "jobs",
+      "education",
+      "women-girls"
+    ],
+    "supportTypes": [
+      "funding"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://mastercardfdn.org/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/KyEB9glCz7etKTxP9PQCItbgjmndvIYDyO8Y6gns.png"
   },
   {
     "name": "Mra",
-    "summary": "",
+    "summary": "The Malawi Revenue Authority (MRA) is the government agency responsible for assessing, collecting and accounting for tax and other revenue on behalf of the Government of Malawi.",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
       "Malawi"
     ],
-    "website": "",
-    "contactEmail": "",
+    "website": "https://www.mra.mw/",
+    "contactEmail": "callcentre@mra.mw",
     "logo": "https://mhubmw.com/storage/logos/K4oL5IRI2UHZGWb8R2dtNsO2ZQeQFvQxH8VuyvM5.png"
   },
   {
     "name": "Mubas",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The Malawi University of Business and Applied Sciences (MUBAS) offers programmes across business, science, engineering and technology designed to prepare students for employment and entrepreneurship.",
+    "focusTags": [
+      "education",
+      "entrepreneurship"
+    ],
+    "supportTypes": [
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
-    "contactEmail": "",
+    "website": "https://www.mubas.ac.mw/",
+    "contactEmail": "vc@mubas.ac.mw",
     "logo": "https://mhubmw.com/storage/logos/oFKEmO0ClkSkvcQWFUiI4v7oZAVNWy0DyGK6UgBn.png"
   },
   {
     "name": "Must",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The Malawi University of Science and Technology (MUST) is Malawi's public university dedicated to science, technology and innovation, promoting the development, adaptation and application of technology for the country's economic development.",
+    "focusTags": [
+      "education",
+      "innovation"
+    ],
+    "supportTypes": [
+      "training",
+      "research"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
-    "contactEmail": "",
+    "website": "https://www.must.ac.mw/",
+    "contactEmail": "registrar@must.ac.mw",
     "logo": "https://mhubmw.com/storage/logos/PrccgoDJ97BfHhJmvHHaXqly6KA9s6abmJSqojse.png"
   },
   {
     "name": "Malawi Government",
-    "summary": "",
+    "summary": "The official Government of the Republic of Malawi, encompassing the Presidency, ministries, departments and related public institutions responsible for national governance and public services.",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.malawi.gov.mw/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/tXzY7xBVe3vGCTCLdxNarAnoKJLnqUzG7eg72VKJ.png"
   },
   {
     "name": "Mzuzu University",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "Mzuzu University is Malawi's second national public university, established in 1997, providing higher education, training, research and community engagement services.",
+    "focusTags": [
+      "education"
+    ],
+    "supportTypes": [
+      "training",
+      "research"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.mzuni.ac.mw/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/2NkrYuWxZ216YxjzEY9jBLijLHLeOm0S3o4s8tnP.jpg"
   },
   {
     "name": "National Bank",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "National Bank of Malawi is a commercial bank headquartered in Blantyre, providing personal, corporate and investment banking services through a network of service centres across the country.",
+    "focusTags": [
+      "finance"
+    ],
+    "supportTypes": [
+      "funding"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.natbank.co.mw/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/FaSIsPD8JgZgIUKzKWFb6yqHMmtsRDP0qAMSJdG7.jpg"
   },
   {
     "name": "NDI",
-    "summary": "",
+    "summary": "The National Democratic Institute (NDI) is a US-based nonprofit that has operated in Malawi for over 30 years, working with civil society organisations, political parties and government institutions to strengthen democratic processes and election integrity.",
     "focusTags": [],
-    "supportTypes": [],
+    "supportTypes": [
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.ndi.org/taxonomy/term/1096",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/O0hZt4R7swZcBpYwF8eYOcxRdrhYpalq6AWRo2B6.png"
   },
   {
     "name": "NICE",
-    "summary": "",
+    "summary": "The National Initiative for Civic Education (NICE) is an independent Malawian public trust established in 1999 to strengthen democracy through civic and voter education, community mobilisation and local governance support across all of Malawi's districts.",
     "focusTags": [],
-    "supportTypes": [],
+    "supportTypes": [
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "http://www.nice.mw/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/aBpzkpsNUJNbHS0PTEBQyzeXsHYeydbTKXYp13td.jpg"
   },
@@ -433,25 +520,33 @@
   },
   {
     "name": "NYCOM",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The National Youth Council of Malawi (NYCOM) is a statutory body established under an Act of Parliament to coordinate, promote and advocate for youth development, including participation, entrepreneurship, leadership and skills development across the country.",
+    "focusTags": [
+      "youth",
+      "entrepreneurship"
+    ],
+    "supportTypes": [
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
-    "contactEmail": "",
+    "website": "https://nycom.mw/",
+    "contactEmail": "info@nycom.mw",
     "logo": "https://mhubmw.com/storage/logos/QAlyEAhAQ9i3JbGq3EqDRgP5eNOkgeiql40MaJHg.jpg"
   },
   {
     "name": "OSISA",
-    "summary": "",
+    "summary": "The Open Society Initiative for Southern Africa (OSISA) works across eleven southern African countries, including Malawi, to deepen democracy, protect human rights and enhance good governance through grant-making, research and advocacy.",
     "focusTags": [],
-    "supportTypes": [],
+    "supportTypes": [
+      "funding",
+      "research"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://osisa.org/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/PPhHPHjpy7e18NTMvkpjamxi74mHIDqeQ9wWm37L.png"
   },
@@ -481,13 +576,20 @@
   },
   {
     "name": "PLAN",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "Plan International is a global child rights and girls' equality organisation that has worked in Malawi since 1994, focused on protecting children from violence, ensuring quality education, and empowering girls and young women economically.",
+    "focusTags": [
+      "women-girls",
+      "education",
+      "youth"
+    ],
+    "supportTypes": [
+      "funding",
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://plan-international.org/malawi/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/jrkKmDiKVtZ79JqGy6hXqwBGBEk4a8TpYVUZrpXj.png"
   },
@@ -565,13 +667,19 @@
   },
   {
     "name": "SMEDI",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The Small and Medium Enterprises Development Institute (SMEDI) is a Malawian parastatal under the Ministry of Trade and Industry, formed in 2013, mandated to promote the development, growth and expansion of micro, small and medium enterprises through training, business development services and access to finance.",
+    "focusTags": [
+      "entrepreneurship",
+      "finance"
+    ],
+    "supportTypes": [
+      "training",
+      "mentorship"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.smedi.org.mw/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/SxGnqcynx7upvcgzwQgoZ85C1izwqQk31jXyLZAY.png"
   },
@@ -589,13 +697,17 @@
   },
   {
     "name": "STANDARD BANK",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "Standard Bank Malawi is a licensed commercial bank offering personal, business and corporate banking, lending, digital banking, investment and insurance solutions in Malawi.",
+    "focusTags": [
+      "finance"
+    ],
+    "supportTypes": [
+      "funding"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.standardbank.co.mw/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/94j50ithdvQgk3fj4Jlxn51DbmNIMZY5K4i03jHo.jpg"
   },
@@ -612,15 +724,23 @@
     "logo": "https://mhubmw.com/storage/logos/XpZkkZjnUUChYVIXpDbyzzHRAlscwtQX96O8RxLp.png"
   },
   {
-    "name": "tvt",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "name": "TEVETA",
+    "summary": "The Technical, Entrepreneurial and Vocational Education and Training Authority regulates, promotes and facilitates quality technical, entrepreneurial and vocational education and training in Malawi, including apprenticeships, curriculum development and certification.",
+    "focusTags": [
+      "digital-skills",
+      "entrepreneurship",
+      "youth",
+      "education",
+      "jobs"
+    ],
+    "supportTypes": [
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
-    "contactEmail": "",
+    "website": "https://www.tevetamw.com/",
+    "contactEmail": "info@tevetamw.com",
     "logo": "https://mhubmw.com/storage/logos/RwouQA9y2Wgoatwv47UfzerDiOGoQHvBPOA23mXt.jpg"
   },
   {
@@ -637,49 +757,75 @@
   },
   {
     "name": "USAID",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "USAID is the United States government agency for international development, funding programmes in Malawi that support food security, health, democratic governance and education, providing roughly $70 million annually in development assistance.",
+    "focusTags": [
+      "health",
+      "education",
+      "agritech"
+    ],
+    "supportTypes": [
+      "funding",
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.usaid.gov/malawi",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/L8cVYSswfJSEnMp1K6UI4GbKrKDPVGrVivFQstXY.png"
   },
   {
     "name": "UKAID",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "UK aid, delivered through the UK Foreign, Commonwealth & Development Office (FCDO) and the British High Commission, funds development programmes in Malawi spanning poverty reduction, trade and investment, health and humanitarian response.",
+    "focusTags": [
+      "jobs",
+      "finance"
+    ],
+    "supportTypes": [
+      "funding"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.gov.uk/government/publications/uk-malawi-development-partnership-summary",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/iw1K9e9EBebvfWc966Td3Y20Y2kS2bzmcPFkxyVz.jpg"
   },
   {
     "name": "UN Women",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "UN Women is the United Nations entity for gender equality and the empowerment of women, working in Malawi with government, civil society and private sector partners to end violence against women, expand women's economic empowerment, and strengthen women's leadership in governance.",
+    "focusTags": [
+      "women-girls",
+      "jobs"
+    ],
+    "supportTypes": [
+      "funding",
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://africa.unwomen.org/en/where-we-are/eastern-and-southern-africa/malawi",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/Q9QJzASP9T10vcnITBoKaijVKsL8F1Qu2LWPzbOp.png"
   },
   {
     "name": "UNDP",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The United Nations Development Programme (UNDP) is the UN's global development network, working with the Government of Malawi and partners on poverty eradication, private sector and SME development, energy access, and climate resilience.",
+    "focusTags": [
+      "entrepreneurship",
+      "jobs",
+      "climate"
+    ],
+    "supportTypes": [
+      "funding",
+      "training",
+      "research"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.undp.org/malawi",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/t5pj72PxLN6IlGahhQRX5vDHfC5r9pipO1J2ce86.png"
   },
@@ -697,25 +843,32 @@
   },
   {
     "name": "UNICEF",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "UNICEF works with the Government of Malawi and partners to protect children's rights, delivering health, nutrition, education, water and sanitation, and child protection services to reach vulnerable children and their families.",
+    "focusTags": [
+      "health",
+      "education",
+      "youth"
+    ],
+    "supportTypes": [
+      "funding",
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.unicef.org/malawi",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/BU7pqn9WEUKdeur6pneiFkaYeO7Dx8LQuvJ9fQ5x.png"
   },
   {
     "name": "US EMBASSY",
-    "summary": "",
+    "summary": "The U.S. Embassy in Lilongwe is the United States' diplomatic mission to Malawi, advancing bilateral relations and cooperation on health, education, economic development and democratic governance.",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://mw.usembassy.gov/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/l9AAhVPFFbQMl2L6tpbtwBOw4gGK5Y7IAQspXu4h.png"
   },
@@ -733,25 +886,39 @@
   },
   {
     "name": "World Bank",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "The World Bank supports Malawi's economic growth and poverty reduction through investments and technical assistance focused on strengthening human capital, promoting private sector-led jobs, and building climate resilience.",
+    "focusTags": [
+      "jobs",
+      "climate",
+      "finance"
+    ],
+    "supportTypes": [
+      "funding",
+      "research"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.worldbank.org/en/country/malawi",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/51D1pmI0v5KWzOfrz0yQoaH1TV6LVYEBsHIHpcIP.png"
   },
   {
     "name": "WUSC",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "WUSC (World University Service of Canada) is a Canadian non-profit that has worked in Malawi since 1981, fostering youth-centred solutions for education, economic opportunity and empowerment, including a Volunteer Cooperation Program and resettlement support for refugee students.",
+    "focusTags": [
+      "youth",
+      "education",
+      "women-girls"
+    ],
+    "supportTypes": [
+      "training",
+      "funding"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://wusc.ca/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/msqyAn5GaJKyQwO8mOmytTUAYjY9TD9i5bTufXke.jpg"
   },
@@ -805,25 +972,31 @@
   },
   {
     "name": "Facebook",
-    "summary": "",
+    "summary": "Facebook (Meta Platforms) is a global technology company operating social media and developer platforms; Meta previously ran the Developer Circles programme supporting local developer communities worldwide before winding it down in 2023.",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://about.meta.com/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/1zeBZPC9myMTIuwKVayysSwZ2qlKoQoVrgdpaBrq.png"
   },
   {
     "name": "SAP",
-    "summary": "",
-    "focusTags": [],
-    "supportTypes": [],
+    "summary": "SAP SE is a German multinational enterprise software company that co-runs SAP Africa Code Week, a digital skills initiative delivered with UNESCO, ADEA and partners that has equipped over 17 million young people across Africa with coding and digital literacy skills.",
+    "focusTags": [
+      "digital-skills",
+      "youth",
+      "education"
+    ],
+    "supportTypes": [
+      "training"
+    ],
     "regions": [
       "Malawi"
     ],
-    "website": "",
+    "website": "https://www.sap.com/",
     "contactEmail": "",
     "logo": "https://mhubmw.com/storage/logos/5Ay4jFhrSyUNfOXODhvUHdz7pC42TJaXbvFbQ8nk.png"
   },
