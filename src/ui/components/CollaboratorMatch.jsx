@@ -197,6 +197,7 @@ export function CollaboratorMatch({ activities, collaborators, isSampleData }) {
                 <div>
                   <h3>{collaborator.name}</h3>
                   {collaborator.summary && <p>{collaborator.summary}</p>}
+                  {collaborator.collaborationFit && <p className="collab-fit">{collaborator.collaborationFit}</p>}
                 </div>
                 <div className={`collab-score ${scoreBand(score)}`}>
                   <strong>{score}</strong>

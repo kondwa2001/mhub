@@ -26,44 +26,6 @@
   max-width: 62ch;
 }
 
-/* View switch (match vs. directory) */
-.collab-views {
-  display: flex;
-  gap: 6px;
-  margin: 14px 0 22px;
-}
-
-.collab-view {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 14px;
-  border: 1px solid var(--line);
-  background: #fff;
-  border-radius: 20px;
-  color: #60716a;
-  font-size: 12px;
-  font-weight: 600;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-}
-
-.collab-view svg {
-  width: 15px;
-  height: 15px;
-}
-
-.collab-view:hover {
-  border-color: #cfdad3;
-  background: #f7f9f7;
-}
-
-.collab-view.active {
-  border-color: #bcd8c9;
-  color: #10785a;
-  background: #eaf5ef;
-  font-weight: 700;
-}
-
 /* Notices */
 .collab-notice {
   display: flex;
@@ -79,12 +41,6 @@
   color: #8a5514;
 }
 
-.collab-notice.success {
-  background: #eaf5ef;
-  border-left-color: var(--green);
-  color: #10614d;
-}
-
 .collab-notice p {
   margin: 0;
 }
@@ -94,83 +50,6 @@
   width: 17px;
   height: 17px;
   margin-top: 1px;
-}
-
-/* Directory */
-.collab-directory-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.collab-directory-head .eyebrow {
-  margin: 0;
-}
-
-.collab-add,
-.collab-submit {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 15px;
-  border-radius: 7px;
-  font-size: 12px;
-  font-weight: 600;
-  border: 0;
-  transition: background-color 0.15s ease;
-}
-
-.collab-add svg,
-.collab-submit svg {
-  width: 15px;
-  height: 15px;
-}
-
-.collab-add {
-  background: #eaf5ef;
-  color: #10785a;
-}
-
-.collab-add:hover {
-  background: #ddeee4;
-}
-
-.collab-submit {
-  background: var(--green);
-  color: #fff;
-  box-shadow: 0 5px 13px #0a7b6126;
-}
-
-.collab-submit:hover:not(:disabled) {
-  background: #086651;
-}
-
-.collab-submit:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-.collab-field-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.collab-field-row .collab-field {
-  margin-bottom: 20px;
-}
-
-.collab-error {
-  margin: 0 0 14px;
-  padding: 10px 13px;
-  border-radius: 7px;
-  background: #fdecec;
-  border-left: 3px solid #d64545;
-  color: #a72f2f;
-  font-size: 12px;
 }
 
 /* Mode switch */
@@ -376,6 +255,16 @@
   font-size: 12px;
   line-height: 1.55;
   color: var(--muted);
+}
+
+.collab-fit {
+  margin-top: 6px !important;
+  color: var(--ink) !important;
+}
+
+.collab-fit::before {
+  content: 'Fit for mHub: ';
+  font-weight: 600;
 }
 
 .collab-score {

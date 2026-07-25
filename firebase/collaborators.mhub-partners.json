@@ -2,6 +2,7 @@
   {
     "name": "Acades",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -14,6 +15,7 @@
   {
     "name": "ActionAid",
     "summary": "ActionAid Malawi is part of a global justice federation working with grassroots communities across Malawi's poorest and most remote areas to advance social justice, gender equality, land rights and access to education.",
+    "collaborationFit": "As a grassroots-focused rights organisation working with women and girls in Malawi's poorest and most remote districts, ActionAid would be a strong fit for mHub's women- and girls-focused digital-literacy or economic-empowerment training reaching underserved rural communities, rather than for urban incubation or venture-style funding.",
     "focusTags": [
       "women-girls"
     ],
@@ -30,6 +32,7 @@
   {
     "name": "Africa Code Week",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -42,6 +45,7 @@
   {
     "name": "ADB",
     "summary": "The African Development Bank (AfDB) is a regional multilateral development finance institution that assists its African member countries, including Malawi, with investments in agro-industrialisation, private sector growth, infrastructure and job creation.",
+    "collaborationFit": "As a regional development finance institution running the Jobs for Youth in Africa Strategy and its associated Youth Entrepreneurship and Innovation Multi-Donor Trust Fund, alongside the EIB-partnered Boost Africa venture-capital facility, AfDB would be a strong fit for co-financing or grant proposals tied to mHub's youth entrepreneurship and job-creation programmes, rather than direct grassroots training delivery.",
     "focusTags": [
       "finance",
       "jobs"
@@ -59,6 +63,7 @@
   {
     "name": "AfriLabs",
     "summary": "AfriLabs is a pan-African network connecting over 500 technology and innovation hubs across more than 50 countries, supporting entrepreneurs with skills, funding connections and networks to help them scale their ventures.",
+    "collaborationFit": "As the continent's largest network of innovation hubs, with existing partnerships spanning the Mastercard Foundation, Google for Startups and the Gates Foundation, AfriLabs would be a strong fit for mHub to formalise hub-network membership through, opening access to pass-through grants, mentorship exchanges and pan-African challenge programmes routed to member hubs rather than direct bilateral funding.",
     "focusTags": [
       "innovation",
       "entrepreneurship",
@@ -79,6 +84,7 @@
   {
     "name": "Ciat",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -91,6 +97,7 @@
   {
     "name": "Awe",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -103,6 +110,7 @@
   {
     "name": "Basel Institutte",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -115,6 +123,7 @@
   {
     "name": "BongoHive",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -127,6 +136,7 @@
   {
     "name": "British Council",
     "summary": "The British Council is the United Kingdom's international organisation for cultural relations and educational opportunities, active in Malawi through programmes in education, arts and culture, and skills and employability such as the EU-funded Zantchito Skills for Jobs TVET project.",
+    "collaborationFit": "Given its role delivering EU-funded skills-and-employability programming in Malawi such as the Zantchito Skills for Jobs TVET project, British Council would be a strong fit as a delivery or consortium partner for mHub's digital-skills and youth-employability training, particularly where these intersect with the vocational-training and creative-economy funding streams it channels.",
     "focusTags": [
       "education",
       "creative",
@@ -145,6 +155,7 @@
   {
     "name": "Care Malawi",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -157,6 +168,7 @@
   {
     "name": "CCJP",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -169,6 +181,7 @@
   {
     "name": "Code Africa",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -181,6 +194,7 @@
   {
     "name": "Total Africa",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -193,6 +207,7 @@
   {
     "name": "Crecom",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -205,6 +220,7 @@
   {
     "name": "Dot",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -217,6 +233,7 @@
   {
     "name": "dzuka",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -229,6 +246,7 @@
   {
     "name": "Eco Bank",
     "summary": "Ecobank Malawi is the local subsidiary of Ecobank Transnational Incorporated, a pan-African banking group operating in 33 African countries, offering commercial and digital banking services.",
+    "collaborationFit": "As operator of the pan-African Ecobank Fintech Challenge, which awards cash prizes, API access and venture-capital introductions to promising fintech start-ups across its 33-country network, Ecobank would be a strong fit for mHub to partner with on a fintech-focused incubation track, either co-hosting local heats or pipelining graduating fintech ventures into the Challenge.",
     "focusTags": [
       "finance"
     ],
@@ -245,6 +263,7 @@
   {
     "name": "EU",
     "summary": "The Delegation of the European Union to Malawi is the EU's diplomatic representation in the country, implementing EU development cooperation programmes in areas such as education, governance, climate action and public health.",
+    "collaborationFit": "Through its Global Gateway investment package for Malawi, which channels over EUR130 million into education, training and research alongside dedicated digital-connectivity and civil-society funding windows, the EU delegation would be a strong fit for grant proposals tied to mHub's digital-skills training and youth-employability programming, rather than for direct equity or enterprise financing.",
     "focusTags": [
       "education",
       "climate",
@@ -263,6 +282,7 @@
   {
     "name": "FMT",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -275,6 +295,7 @@
   {
     "name": "GIZ",
     "summary": "GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit) is Germany's federal enterprise for international development cooperation, implementing projects worldwide, including in Malawi, across areas such as governance, climate protection and sustainable economic development.",
+    "collaborationFit": "Through mechanisms such as develoPPP, which co-finances partnerships between private companies and development cooperation covering up to half of project costs for skills training and enterprise development in any BMZ partner country including Malawi, GIZ would be a strong fit for mHub to approach for matched funding of private-sector-linked digital-skills or green-enterprise programming, rather than as an unconditional grant source.",
     "focusTags": [
       "climate",
       "entrepreneurship"
@@ -293,6 +314,7 @@
   {
     "name": "GJU",
     "summary": "The Gender & Justice Unit (GJU) is a women-led Malawian organisation using legal empowerment as a catalyst for gender equality, access to justice, and social and climate justice, working through litigation, research, community mobilisation and partnerships.",
+    "collaborationFit": "As a women-led legal-empowerment organisation working at the intersection of gender equality, access to justice and climate justice, the Gender & Justice Unit would be a strong fit for mHub to collaborate with on joint research or advocacy connecting its women-in-tech or digital-inclusion programming to gender-responsive legal and policy reform, rather than as a funding source.",
     "focusTags": [
       "women-girls"
     ],
@@ -310,6 +332,7 @@
   {
     "name": "GOOGLE E SKILLS",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -322,6 +345,7 @@
   {
     "name": "Heifer",
     "summary": "Heifer International works with smallholder farmers in Malawi to build profitable agribusinesses across value chains such as dairy, beef and crops, helping them earn sustainable incomes and overcome poverty.",
+    "collaborationFit": "Through its AYuTe Africa Challenge, an annual competition awarding up to $1.5 million in cash grants to young African agritech innovators, Heifer International would be a strong fit for mHub to partner with on its agritech incubation track, either by co-hosting a Malawi leg of the challenge or by pipelining agribusiness ventures from its programmes into the competition.",
     "focusTags": [
       "agritech"
     ],
@@ -339,6 +363,7 @@
   {
     "name": "Hivos",
     "summary": "Hivos is an international organisation working towards a world where people can realise their full potential, active in Southern Africa including Malawi on programmes covering youth empowerment, women's leadership, climate resilience and civic space.",
+    "collaborationFit": "Through its five-year 'Connect, Defend, Act!' programme, which is funding civic-space and digital-rights work in Malawi through 2029 under its Civic Rights in a Digital Age impact area, Hivos would be a strong fit for mHub to approach for funding tied to digital-rights, civic-tech or youth-and-gender programming, rather than for direct enterprise or incubation support.",
     "focusTags": [
       "youth",
       "women-girls",
@@ -358,6 +383,7 @@
   {
     "name": "Kweza",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -370,6 +396,7 @@
   {
     "name": "Mastercard",
     "summary": "The Mastercard Foundation is a global foundation working to enable young people in Africa, and Indigenous youth in Canada, to access dignified and fulfilling work, with a goal of helping 30 million young people access work by 2030.",
+    "collaborationFit": "Through its Young Africa Works strategy, which is already active in Malawi via partners such as FAWE Malawi and DOT's youth employment model, the Mastercard Foundation would be a strong fit for mHub's youth entrepreneurship, digital-skills and dignified-work programming to seek strategic partnership or funding from, particularly initiatives centred on young women and marginalised youth.",
     "focusTags": [
       "youth",
       "jobs",
@@ -389,6 +416,7 @@
   {
     "name": "Mra",
     "summary": "The Malawi Revenue Authority (MRA) is the government agency responsible for assessing, collecting and accounting for tax and other revenue on behalf of the Government of Malawi.",
+    "collaborationFit": "As the government agency responsible for tax administration, the Malawi Revenue Authority would be a strong fit for mHub to collaborate with on tax-compliance and formalisation training for its incubated start-ups and SMEs, such as digital record-keeping or e-invoicing literacy, rather than as a funding or grant partner.",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -401,6 +429,7 @@
   {
     "name": "Mubas",
     "summary": "The Malawi University of Business and Applied Sciences (MUBAS) offers programmes across business, science, engineering and technology designed to prepare students for employment and entrepreneurship.",
+    "collaborationFit": "Given its programmes spanning business, engineering and technology aimed at preparing graduates for employment and entrepreneurship, MUBAS would be a strong fit for mHub to partner with on entrepreneurship curriculum co-design, student internship or incubation pipelines, and joint applied-research projects, rather than as a funder.",
     "focusTags": [
       "education",
       "entrepreneurship"
@@ -418,6 +447,7 @@
   {
     "name": "Must",
     "summary": "The Malawi University of Science and Technology (MUST) is Malawi's public university dedicated to science, technology and innovation, promoting the development, adaptation and application of technology for the country's economic development.",
+    "collaborationFit": "As Malawi's public university dedicated to science, technology and innovation, MUST would be a strong fit for mHub to collaborate with on applied research, technology-transfer or joint innovation-challenge initiatives that connect its research capacity with mHub's incubation and market-access support, rather than as a source of funding.",
     "focusTags": [
       "education",
       "innovation"
@@ -436,6 +466,7 @@
   {
     "name": "Malawi Government",
     "summary": "The official Government of the Republic of Malawi, encompassing the Presidency, ministries, departments and related public institutions responsible for national governance and public services.",
+    "collaborationFit": "Given its National Digitalization Policy (2023-2028) and National Youth Policy (2023-2028), both of which prioritise public-private partnerships to expand digital skills, ICT innovation and youth entrepreneurship, the Government of Malawi would be a strong fit for mHub to engage as a policy-aligned delivery partner on national digital-skills or youth-innovation targets, for example through relevant ministries' PPP or tech-hub initiatives, rather than as a direct project funder in the near term.",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -448,6 +479,7 @@
   {
     "name": "Mzuzu University",
     "summary": "Mzuzu University is Malawi's second national public university, established in 1997, providing higher education, training, research and community engagement services.",
+    "collaborationFit": "As Malawi's second national public university with an established research and community-engagement mandate, Mzuzu University would be a strong fit for mHub to formalise an academic partnership with, for example co-developing entrepreneurship or digital-skills curricula, joint research on innovation ecosystems, or a satellite incubation presence in the Northern Region, rather than as a funding source.",
     "focusTags": [
       "education"
     ],
@@ -465,6 +497,7 @@
   {
     "name": "National Bank",
     "summary": "National Bank of Malawi is a commercial bank headquartered in Blantyre, providing personal, corporate and investment banking services through a network of service centres across the country.",
+    "collaborationFit": "As a commercial bank that has actively showcased and supported Malawian MSMEs through initiatives such as its SME Day exhibitions, National Bank of Malawi would be a strong fit for mHub to approach about sponsoring incubation cohort showcases, offering SME lending or digital-banking products to graduating entrepreneurs, or co-hosting business-development events, rather than for grant-style programme funding.",
     "focusTags": [
       "finance"
     ],
@@ -481,6 +514,7 @@
   {
     "name": "NDI",
     "summary": "The National Democratic Institute (NDI) is a US-based nonprofit that has operated in Malawi for over 30 years, working with civil society organisations, political parties and government institutions to strengthen democratic processes and election integrity.",
+    "collaborationFit": "Given its programming on democracy and technology, including civic-tech tools such as DemTools for election monitoring and citizen engagement and its work countering election-related disinformation in Malawi, NDI would be a strong fit for mHub to collaborate with on a civic-tech or govtech development track, such as building or adapting digital tools for election observation or citizen participation, rather than for enterprise-incubation funding.",
     "focusTags": [],
     "supportTypes": [
       "training"
@@ -495,6 +529,7 @@
   {
     "name": "NICE",
     "summary": "The National Initiative for Civic Education (NICE) is an independent Malawian public trust established in 1999 to strengthen democracy through civic and voter education, community mobilisation and local governance support across all of Malawi's districts.",
+    "collaborationFit": "Given its nationwide network for civic and voter education and local-governance support, the National Initiative for Civic Education would be a strong fit for mHub to collaborate with on digital civic-education tools or mobile-based voter and governance information platforms, extending mHub's tech capacity into NICE's district-level civic engagement work, rather than as a funder.",
     "focusTags": [],
     "supportTypes": [
       "training"
@@ -509,6 +544,7 @@
   {
     "name": "NOWEIGAIN",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -521,6 +557,7 @@
   {
     "name": "NYCOM",
     "summary": "The National Youth Council of Malawi (NYCOM) is a statutory body established under an Act of Parliament to coordinate, promote and advocate for youth development, including participation, entrepreneurship, leadership and skills development across the country.",
+    "collaborationFit": "Through its Youth Innovation Fund, a national fund launched in 2025 to back young innovators in sectors such as agriculture, tourism, mining and manufacturing, the National Youth Council of Malawi would be a strong fit for mHub to partner with on pipelining incubated youth ventures into YIF funding rounds or co-delivering entrepreneurship and leadership training under its statutory youth-development mandate.",
     "focusTags": [
       "youth",
       "entrepreneurship"
@@ -538,6 +575,7 @@
   {
     "name": "OSISA",
     "summary": "The Open Society Initiative for Southern Africa (OSISA) works across eleven southern African countries, including Malawi, to deepen democracy, protect human rights and enhance good governance through grant-making, research and advocacy.",
+    "collaborationFit": "Through its Economic and Social Justice grant-making cluster, which funds initiatives building economic voice and agency among marginalised youth, women and informal traders across Southern Africa with grants of up to $50,000, OSISA would be a strong fit for mHub to approach for funding tied to inclusive digital-economy or informal-sector entrepreneurship programming, rather than for direct venture or incubation financing.",
     "focusTags": [],
     "supportTypes": [
       "funding",
@@ -553,6 +591,7 @@
   {
     "name": "OXFARM",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -565,6 +604,7 @@
   {
     "name": "PAC",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -577,6 +617,7 @@
   {
     "name": "PLAN",
     "summary": "Plan International is a global child rights and girls' equality organisation that has worked in Malawi since 1994, focused on protecting children from violence, ensuring quality education, and empowering girls and young women economically.",
+    "collaborationFit": "As a global child-rights and girls'-equality organisation that has run economic-empowerment programming for adolescent girls and young women in Malawi since 1994, Plan International would be a strong fit for mHub's girls- and young-women-focused digital-skills or entrepreneurship-training programmes to seek programme partnership or grant funding from, rather than for infrastructure or general operating costs.",
     "focusTags": [
       "women-girls",
       "education",
@@ -596,6 +637,7 @@
   {
     "name": "PPPC",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -608,6 +650,7 @@
   {
     "name": "Qoncept Creative",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -620,6 +663,7 @@
   {
     "name": "SAIS",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -632,6 +676,7 @@
   {
     "name": "SANBIO",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -644,6 +689,7 @@
   {
     "name": "SEGAL",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -656,6 +702,7 @@
   {
     "name": "SHA",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -668,6 +715,7 @@
   {
     "name": "SMEDI",
     "summary": "The Small and Medium Enterprises Development Institute (SMEDI) is a Malawian parastatal under the Ministry of Trade and Industry, formed in 2013, mandated to promote the development, growth and expansion of micro, small and medium enterprises through training, business development services and access to finance.",
+    "collaborationFit": "As the government parastatal mandated to grow Malawi's micro, small and medium enterprises through training, business development services and access-to-finance support, SMEDI would be a strong fit for mHub to formalise a referral and co-delivery partnership with, for instance jointly running SME digitalisation or business-development-service training, rather than as an external funding source.",
     "focusTags": [
       "entrepreneurship",
       "finance"
@@ -686,6 +734,7 @@
   {
     "name": "INCUBATOR",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -698,6 +747,7 @@
   {
     "name": "STANDARD BANK",
     "summary": "Standard Bank Malawi is a licensed commercial bank offering personal, business and corporate banking, lending, digital banking, investment and insurance solutions in Malawi.",
+    "collaborationFit": "As a banking group that runs its own business incubators and enterprise-development programmes elsewhere in Africa, including initiatives supporting youth and women entrepreneurs, Standard Bank would be a strong fit for mHub to approach about local sponsorship of an incubation cohort, SME lending products for graduating start-ups, or a Malawi-specific enterprise-development partnership modelled on its group-level initiatives.",
     "focusTags": [
       "finance"
     ],
@@ -714,6 +764,7 @@
   {
     "name": "Tratech",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -726,6 +777,7 @@
   {
     "name": "TEVETA",
     "summary": "The Technical, Entrepreneurial and Vocational Education and Training Authority regulates, promotes and facilitates quality technical, entrepreneurial and vocational education and training in Malawi, including apprenticeships, curriculum development and certification.",
+    "collaborationFit": "As Malawi's regulator of technical and vocational training, which administers levy-funded grants to accredited training providers through the TEVET Fund, TEVETA would be a strong fit for accrediting mHub's digital-skills and entrepreneurship curricula and for co-funding apprenticeship-style training cohorts, rather than for venture or incubation-style funding.",
     "focusTags": [
       "digital-skills",
       "entrepreneurship",
@@ -746,6 +798,7 @@
   {
     "name": "Timveni",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -758,6 +811,7 @@
   {
     "name": "USAID",
     "summary": "USAID is the United States government agency for international development, funding programmes in Malawi that support food security, health, democratic governance and education, providing roughly $70 million annually in development assistance.",
+    "collaborationFit": "Through initiatives such as its Growth Poles Project, a $40 million activity working with anchor firms to expand economic opportunity and workforce-readiness skills for youth, women and smallholder farmers, USAID would be a strong fit for mHub to approach for programme partnership or sub-award funding tied to its enterprise-growth and youth workforce-development programming, rather than for unrestricted grants.",
     "focusTags": [
       "health",
       "education",
@@ -777,6 +831,7 @@
   {
     "name": "UKAID",
     "summary": "UK aid, delivered through the UK Foreign, Commonwealth & Development Office (FCDO) and the British High Commission, funds development programmes in Malawi spanning poverty reduction, trade and investment, health and humanitarian response.",
+    "collaborationFit": "As one of the funders behind the Malawi Innovation Challenge Fund's matching-grant mechanism for innovative private-sector projects, alongside its broader development programming on trade, investment and poverty reduction, UK aid delivered through the FCDO would be a strong fit for mHub to approach for innovation-challenge-style co-funding of its incubated enterprises, rather than for direct core funding of hub operations.",
     "focusTags": [
       "jobs",
       "finance"
@@ -794,6 +849,7 @@
   {
     "name": "UN Women",
     "summary": "UN Women is the United Nations entity for gender equality and the empowerment of women, working in Malawi with government, civil society and private sector partners to end violence against women, expand women's economic empowerment, and strengthen women's leadership in governance.",
+    "collaborationFit": "Through its Fund for Gender Equality, which channels grants directly to national women-led civil-society organisations advancing women's economic empowerment, UN Women would be a strong fit for mHub to approach for funding of its women-in-tech or women's digital-entrepreneurship programming, provided it partners with or channels support through women-led local organisations as the Fund requires.",
     "focusTags": [
       "women-girls",
       "jobs"
@@ -812,6 +868,7 @@
   {
     "name": "UNDP",
     "summary": "The United Nations Development Programme (UNDP) is the UN's global development network, working with the Government of Malawi and partners on poverty eradication, private sector and SME development, energy access, and climate resilience.",
+    "collaborationFit": "As co-implementer of the Malawi Innovation Challenge Fund, a competitive matching-grant mechanism for innovative private-sector projects in agriculture, manufacturing and finance, alongside its broader work on private-sector and SME development, UNDP would be a strong fit for mHub to partner with on referring or co-developing innovation-challenge-style proposals for its incubated enterprises, rather than for direct core-cost funding.",
     "focusTags": [
       "entrepreneurship",
       "jobs",
@@ -832,6 +889,7 @@
   {
     "name": "UNICAF",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -844,6 +902,7 @@
   {
     "name": "UNICEF",
     "summary": "UNICEF works with the Government of Malawi and partners to protect children's rights, delivering health, nutrition, education, water and sanitation, and child protection services to reach vulnerable children and their families.",
+    "collaborationFit": "Through its global Innovation Fund, which makes small equity-free investments in early-stage frontier-technology solutions for children and youth, and its Generation Unlimited partnership work on youth digital-skills platforms, UNICEF would be a strong fit for mHub's youth-focused edtech or digital-skills ventures to pursue seed-stage funding or programme partnership from, rather than general operating support.",
     "focusTags": [
       "health",
       "education",
@@ -863,6 +922,7 @@
   {
     "name": "US EMBASSY",
     "summary": "The U.S. Embassy in Lilongwe is the United States' diplomatic mission to Malawi, advancing bilateral relations and cooperation on health, education, economic development and democratic governance.",
+    "collaborationFit": "Through mechanisms such as its Public Diplomacy Small Grants Program, which funds projects developing entrepreneurial skills among youth and women and prioritises YALI and other exchange-programme alumni, and the Ambassador's Special Self-Help Fund for grassroots development, the U.S. Embassy would be a strong fit for mHub to apply to for modest, project-specific grants supporting youth and women's entrepreneurship training, rather than for large-scale core funding.",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -875,6 +935,7 @@
   {
     "name": "wri",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -887,6 +948,7 @@
   {
     "name": "World Bank",
     "summary": "The World Bank supports Malawi's economic growth and poverty reduction through investments and technical assistance focused on strengthening human capital, promoting private sector-led jobs, and building climate resilience.",
+    "collaborationFit": "Through projects such as the Malawi Digital Foundations Project, whose Digital Ecosystem component specifically funds digital-skills development and an enabling environment for digital investment and innovation, the World Bank would be a strong fit for mHub's digital-skills training and tech-ecosystem programming to be positioned as a delivery partner within Bank-financed government projects, rather than as a direct grantor to NGOs.",
     "focusTags": [
       "jobs",
       "climate",
@@ -906,6 +968,7 @@
   {
     "name": "WUSC",
     "summary": "WUSC (World University Service of Canada) is a Canadian non-profit that has worked in Malawi since 1981, fostering youth-centred solutions for education, economic opportunity and empowerment, including a Volunteer Cooperation Program and resettlement support for refugee students.",
+    "collaborationFit": "Through its Volunteer Cooperation Program and Partner Innovation Fund, which has already backed vocational-training initiatives for vulnerable youth in Malawi, WUSC would be a strong fit for mHub's youth-focused digital-skills or vocational-training programming to seek project funding or volunteer-expertise partnership from, particularly initiatives centred on gender equality and vulnerable youth.",
     "focusTags": [
       "youth",
       "education",
@@ -925,6 +988,7 @@
   {
     "name": "Zanthito",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -937,6 +1001,7 @@
   {
     "name": "Zodiak",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -949,6 +1014,7 @@
   {
     "name": "Indigo",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -961,6 +1027,7 @@
   {
     "name": "Global Partners Digital",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -973,6 +1040,7 @@
   {
     "name": "Facebook",
     "summary": "Facebook (Meta Platforms) is a global technology company operating social media and developer platforms; Meta previously ran the Developer Circles programme supporting local developer communities worldwide before winding it down in 2023.",
+    "collaborationFit": "With its flagship Developer Circles community programme wound down since 2023 and its global Small Business Grants Program now closed, Meta's most realistic current fit for mHub is around integrating its free digital-skills and small-business training resources, such as Meta Blueprint, into mHub's digital-skills curricula or entrepreneur training, rather than seeking new direct grant or community-programme funding from Meta.",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -985,6 +1053,7 @@
   {
     "name": "SAP",
     "summary": "SAP SE is a German multinational enterprise software company that co-runs SAP Africa Code Week, a digital skills initiative delivered with UNESCO, ADEA and partners that has equipped over 17 million young people across Africa with coding and digital literacy skills.",
+    "collaborationFit": "As co-runner of SAP Africa Code Week, a continent-wide digital-literacy and coding initiative delivered with UNESCO and ADEA that has already reached over 17 million young people, and as a partner in UNICEF's Yoma youth-skills platform, SAP would be a strong fit for mHub to partner with on hosting local Africa Code Week coding-camp activities or channelling its digital-skills graduates into SAP's youth-employability programming.",
     "focusTags": [
       "digital-skills",
       "youth",
@@ -1003,6 +1072,7 @@
   {
     "name": "Center for Youth and Development",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [
@@ -1015,6 +1085,7 @@
   {
     "name": "Emerge Livelihood",
     "summary": "",
+    "collaborationFit": "",
     "focusTags": [],
     "supportTypes": [],
     "regions": [

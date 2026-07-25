@@ -140,6 +140,7 @@ for (const record of records) {
   await addDoc(collection(db, 'collaborators'), {
     name: record.name.trim(),
     summary: record.summary?.trim() || '',
+    collaborationFit: record.collaborationFit?.trim() || '',
     focusTags: record.focusTags || [],
     supportTypes: record.supportTypes || [],
     regions: record.regions || [],
