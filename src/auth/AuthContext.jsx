@@ -51,9 +51,11 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
-  const register = async ({ name, email, password, organization }) => {
+  const register = async ({ name, email, password, organization, isAdmin }) => {
+    const role = isAdmin ? 'admin' : 'member'
+
     if (!hasFirebaseConfig || !auth || !db) {
-      const localUser = { uid: 'local-demo-user', name: name.trim() || 'Demo user', email: email.trim() || 'demo@example.com', organization: organization?.trim() || '' }
+      const localUser = { uid: 'local-demo-user', name: name.trim() || 'Demo user', email: email.trim() || 'demo@example.com', organization: organization?.trim() || '', role }
       setUser(localUser)
       return localUser
     }
@@ -64,10 +66,19 @@ export function AuthProvider({ children }) {
       displayName: name,
       email: credential.user.email,
       organization: organization?.trim() || null,
+      role,
       photoURL: null,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     }, { merge: true })
+
+    // Firebase auto-signs the new user in the moment createUserWithEmailAndPassword
+    // resolves, which fires the onAuthStateChanged listener above -- and that listener
+    // can read the Firestore profile before the writes above land, catching the user
+    // with no role. Setting it here directly makes registration correct regardless of
+    // how that race resolves.
+    setUser({ uid: credential.user.uid, name: name.trim() || credential.user.email?.split('@')[0] || 'MHub member', email: credential.user.email, organization: organization?.trim() || '', role })
+
     return credential.user
   }
 

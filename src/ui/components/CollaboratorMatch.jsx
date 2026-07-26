@@ -58,7 +58,7 @@ export function CollaboratorMatch({ activities, collaborators, isSampleData }) {
           <Icon name="alert" />
           <p>
             <strong>Sample data.</strong> These results rank placeholder organisations, not real mHub
-            partners. Add real collaborators in the Directory tab before relying on any of this.
+            partners. Add real donors in the Directory tab before relying on any of this.
           </p>
         </div>
       )}
@@ -185,8 +185,8 @@ export function CollaboratorMatch({ activities, collaborators, isSampleData }) {
 
         {hasProject && project.tags.length > 0 && results.length === 0 && (
           <p className="collab-empty">
-            No collaborator in the directory works in these focus areas. Widen the focus areas, or add
-            a collaborator that covers this work.
+            No donor in the directory works in these focus areas. Widen the focus areas, or add
+            a donor that covers this work.
           </p>
         )}
 

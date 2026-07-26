@@ -40,6 +40,17 @@ Optional but recommended:
 - `VITE_FIREBASE_MESSAGING_SENDER_ID`
 - `VITE_FIREBASE_MEASUREMENT_ID`
 
+### Admin accounts
+
+Ticking "Register as an mHub administrator" on the sign-up form sets a `role: 'admin'`
+flag on that profile, which unlocks the Admin dashboard tab (all collaborators, all
+donors, and what each donor funds). Anyone can self-select this at sign-up.
+
+This is a workspace-level flag only, not a security boundary. It does **not** grant the
+Firebase custom claim (`request.auth.token.admin`) that `firestore.rules` actually requires
+to create, update, or delete opportunities, activities, or collaborators; that still has to
+be set via the Firebase Admin SDK or console for accounts that need real curation rights.
+
 ## React Compiler
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).

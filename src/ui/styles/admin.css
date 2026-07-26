@@ -1,0 +1,142 @@
+/* Admin dashboard.
+   Scoped under .admin throughout -- app.css owns several of these generic
+   names globally, and unscoped rules here would leak across the app. */
+
+.admin {
+  max-width: 1000px;
+}
+
+.admin .section-heading {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.admin .section-heading h2 {
+  font: 700 24px 'Playfair Display', serif;
+  letter-spacing: -0.4px;
+  color: var(--ink);
+  margin: 5px 0 0;
+}
+
+.admin-intro {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 22px;
+  max-width: 68ch;
+}
+
+.admin-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  background: #fdf4e7;
+  border-left: 3px solid var(--orange);
+  color: #8a5514;
+}
+
+.admin-notice p {
+  margin: 0;
+}
+
+.admin-notice svg {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  margin-top: 1px;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.admin-stat {
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.admin-stat strong {
+  display: block;
+  font: 700 26px 'Playfair Display', serif;
+  color: var(--ink);
+}
+
+.admin-stat p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.admin-panel {
+  margin-bottom: 28px;
+}
+
+.admin-panel-head {
+  margin-bottom: 12px;
+}
+
+.admin-panel-head .eyebrow {
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  color: #82908b;
+  font-weight: 700;
+}
+
+.admin-empty {
+  color: var(--muted);
+  font-size: 13px;
+  padding: 14px 0;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 11px 14px;
+  background: #f7f9f7;
+  color: #60716a;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  vertical-align: top;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-cell-sub {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11.5px;
+}

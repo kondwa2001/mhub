@@ -26,6 +26,7 @@ export function AuthForm({ onClose, required = false }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [organization, setOrganization] = useState('')
+  const [isAdmin, setIsAdmin] = useState(false)
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
@@ -46,10 +47,11 @@ export function AuthForm({ onClose, required = false }) {
           setSubmitting(false)
           return
         }
-        await register({ name: name.trim(), email: email.trim(), password, organization: organization.trim() })
+        await register({ name: name.trim(), email: email.trim(), password, organization: organization.trim(), isAdmin })
         setMode('signin')
         setPassword('')
         setConfirmPassword('')
+        setIsAdmin(false)
         setSuccess('Account created. Please sign in to continue.')
       } else if (mode === 'forgot') {
         await resetPassword({ email: email.trim() })
@@ -76,6 +78,7 @@ export function AuthForm({ onClose, required = false }) {
       <form className="auth-form" onSubmit={submit}>
         {mode === 'register' && <label>Full name<input value={name} onChange={(event) => setName(event.target.value)} required autoComplete="name" /></label>}
         {mode === 'register' && <label>Company or organisation<input value={organization} onChange={(event) => setOrganization(event.target.value)} autoComplete="organization" placeholder="Optional" /></label>}
+        {mode === 'register' && <label className="auth-checkbox"><input type="checkbox" checked={isAdmin} onChange={(event) => setIsAdmin(event.target.checked)} /> Register as an mHub administrator</label>}
         <label>Email address<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} required autoComplete="email" /></label>
         {mode !== 'forgot' && <label>Password<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required minLength="6" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} /></label>}
         {mode === 'register' && <label>Confirm Password<input type="password" value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required minLength="6" autoComplete="new-password" /></label>}
