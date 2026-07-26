@@ -16,10 +16,15 @@ service cloud.firestore {
       allow create, update, delete: if signedIn() && request.auth.token.admin == true;
     }
 
-    // Activities are curated under the same admin workflow.
+    // Activities are published by workspace members from the Activities tab --
+    // administrators only ever view this collection (the admin workspace has
+    // no create form for it). Editing or removing an existing entry is
+    // reserved for administrators (set with a Firebase custom claim) so one
+    // member can't overwrite another's published activity.
     match /activities/{activityId} {
       allow read: if signedIn();
-      allow create, update, delete: if signedIn() && request.auth.token.admin == true;
+      allow create: if signedIn();
+      allow update, delete: if signedIn() && request.auth.token.admin == true;
     }
 
     // A person can read and update only their own profile and saved items.

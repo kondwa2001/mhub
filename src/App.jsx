@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useAuth } from './auth/useAuth'
+import { activityDate, isPastDue } from './backend/data/activityDates'
 import { collaboratorDirectory, donorOpportunities, mhubActivities } from './backend/data/seedData'
 import { createActivity, getCollaborators, getCollection, subscribeToNotifications } from './backend/firebase/firestoreService'
 import { Icon } from './ui/components/Icon'
@@ -74,6 +75,12 @@ function App() {
     })
   }, [user?.uid])
 
+  const upcomingActivities = useMemo(
+    () => activities.filter((activity) => !isPastDue(activity)).sort((a, b) => (activityDate(a) ?? 0) - (activityDate(b) ?? 0)),
+    [activities],
+  )
+  const nextDeadline = upcomingActivities.length ? activityDate(upcomingActivities[0]) : null
+
   const selectNavigation = (item) => {
     setTab(item)
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -121,7 +128,7 @@ function App() {
     </main>
   }
 
-  const pageContent = tab === 'Activities' ? <ActivityPanel activities={activities} onCreate={addActivity} /> : tab === 'Collaborators' ? <CollaboratorsPage activities={activities} collaborators={collaborators} isSampleData={collaboratorSource === 'seed'} onCollaboratorAdded={addCollaborator} /> : tab === 'Settings' ? <Settings user={user} onSignOut={signOut} onNavigate={selectNavigation} /> : <><section className="welcome"><div><p className="eyebrow">OPPORTUNITY INTELLIGENCE</p><h1>Good morning, {user.name?.split(' ')[0] || 'MHub'} <span>✦</span></h1><p>Find aligned funders and keep your team close to the work that matters.</p></div><button className="primary-button" onClick={() => selectNavigation('Collaborators')}><Icon name="spark" />Find a donor</button></section><section className="metrics" aria-label="Opportunity metrics"><div className="metric"><span className="metric-icon green"><Icon name="target" /></span><div><strong>{collaborators.length}</strong><p>Potential donors</p><small>Private donor directory</small></div></div><div className="metric"><span className="metric-icon purple"><Icon name="calendar" /></span><div><strong>08</strong><p>Active programmes</p><small>3 updated recently</small></div></div><div className="metric"><span className="metric-icon orange"><Icon name="clock" /></span><div><strong>05</strong><p>Deadlines ahead</p><small>Next: 14 May</small></div></div></section></>
+  const pageContent = tab === 'Activities' ? <ActivityPanel activities={activities} onCreate={addActivity} /> : tab === 'Collaborators' ? <CollaboratorsPage activities={activities} collaborators={collaborators} isSampleData={collaboratorSource === 'seed'} onCollaboratorAdded={addCollaborator} /> : tab === 'Settings' ? <Settings user={user} onSignOut={signOut} onNavigate={selectNavigation} /> : <><section className="welcome"><div><p className="eyebrow">OPPORTUNITY INTELLIGENCE</p><h1>Good morning, {user.name?.split(' ')[0] || 'MHub'} <span>✦</span></h1><p>Find aligned funders and keep your team close to the work that matters.</p></div><button className="primary-button" onClick={() => selectNavigation('Collaborators')}><Icon name="spark" />Find a donor</button></section><section className="metrics" aria-label="Opportunity metrics"><div className="metric"><span className="metric-icon green"><Icon name="target" /></span><div><strong>{collaborators.length}</strong><p>Potential donors</p><small>Private donor directory</small></div></div><div className="metric"><span className="metric-icon purple"><Icon name="calendar" /></span><div><strong>{activities.length}</strong><p>Active programmes</p><small>{upcomingActivities.length} upcoming</small></div></div><div className="metric"><span className="metric-icon orange"><Icon name="clock" /></span><div><strong>{upcomingActivities.length}</strong><p>Deadlines ahead</p><small>{nextDeadline ? `Next: ${nextDeadline.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}` : 'No deadlines scheduled'}</small></div></div></section></>
 
   return <main className="app-shell">
     <aside className="sidebar">

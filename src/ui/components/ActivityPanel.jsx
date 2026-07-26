@@ -1,22 +1,6 @@
 import { useMemo, useState } from 'react'
+import { activityDate, isPastDue } from '../../backend/data/activityDates'
 import { Icon } from './Icon'
-
-function toDate(value) {
-  if (!value) return null
-  if (typeof value?.toDate === 'function') return value.toDate()
-  const date = new Date(value)
-  return Number.isNaN(date.getTime()) ? null : date
-}
-
-function activityDate(activity) { return toDate(activity.dueAt || activity.startsAt) }
-
-function isPastDue(activity) {
-  const dueAt = activityDate(activity)
-  if (!dueAt) return false
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-  return dueAt < today
-}
 
 function statusFor(activity) {
   const dueAt = activityDate(activity)
@@ -53,7 +37,7 @@ export function ActivityPanel({ activities, onCreate }) {
       setShowForm(false)
       setView('upcoming')
     } catch (submissionError) {
-      setError(submissionError.code === 'permission-denied' ? 'Only authorised MHub administrators can publish activities.' : submissionError.message || 'The activity could not be saved. Please try again.')
+      setError(submissionError.code === 'permission-denied' ? 'You need to be signed in to publish an activity.' : submissionError.message || 'The activity could not be saved. Please try again.')
     } finally { setSaving(false) }
   }
 

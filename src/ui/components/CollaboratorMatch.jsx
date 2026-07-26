@@ -86,23 +86,33 @@ export function CollaboratorMatch({ activities, collaborators, isSampleData }) {
 
       <div className="collab-form">
         {mode === 'activity' ? (
-          <label className="collab-field">
-            <span>Activity</span>
-            <select
-              value={activityIndex}
-              onChange={(event) => {
-                setActivityIndex(Number(event.target.value))
-                setTagOverride(null)
-              }}
-            >
-              {activities.map((activity, index) => (
-                <option key={activity.id || activity.title} value={index}>
-                  {activity.title}
-                </option>
-              ))}
-            </select>
-            {selectedActivity && <small>{selectedActivity.description || selectedActivity.copy}</small>}
-          </label>
+          activities.length === 0 ? (
+            <p className="collab-empty">
+              No activities published yet, so there is nothing to pick here.{' '}
+              <button type="button" className="collab-reset" onClick={() => switchMode('brief')}>
+                Describe a project instead
+              </button>
+              .
+            </p>
+          ) : (
+            <label className="collab-field">
+              <span>Activity</span>
+              <select
+                value={activityIndex}
+                onChange={(event) => {
+                  setActivityIndex(Number(event.target.value))
+                  setTagOverride(null)
+                }}
+              >
+                {activities.map((activity, index) => (
+                  <option key={activity.id || activity.title} value={index}>
+                    {activity.title}
+                  </option>
+                ))}
+              </select>
+              {selectedActivity && <small>{selectedActivity.description || selectedActivity.copy}</small>}
+            </label>
+          )
         ) : (
           <>
             <label className="collab-field">
