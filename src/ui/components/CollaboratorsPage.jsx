@@ -36,7 +36,7 @@ export function CollaboratorsPage({ activities, collaborators, isSampleData, onC
           onClick={() => setView('directory')}
         >
           <Icon name="grid" />
-          Directory
+          Donors
         </button>
       </div>
 

@@ -38,7 +38,7 @@ export function AdminDashboard({ collaborators, donors, activities, isSampleData
       <div className="section-heading">
         <div>
           <p className="eyebrow">WORKSPACE ADMIN</p>
-          <h2>Admin dashboard</h2>
+          <h2>Overview</h2>
         </div>
       </div>
 

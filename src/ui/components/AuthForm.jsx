@@ -20,18 +20,33 @@ function readableError(error) {
   return messages[error.code] || error.message || `Firebase could not complete that request${error.code ? ` (${error.code})` : ''}`
 }
 
-export function AuthForm({ onClose, required = false }) {
+function EyeIcon() {
+  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+}
+
+function EyeOffIcon() {
+  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a20.3 20.3 0 0 1 5.06-6.06M9.9 4.24A10.4 10.4 0 0 1 12 4c7 0 11 8 11 8a20.3 20.3 0 0 1-3.22 4.44M14.12 14.12a3 3 0 1 1-4.24-4.24" />
+    <path d="M1 1l22 22" />
+  </svg>
+}
+
+export function AuthForm({ onClose, required = false, initialMode = 'signin' }) {
   const { register, signIn, resetPassword } = useAuth()
-  const [mode, setMode] = useState('signin')
+  const [mode, setMode] = useState(initialMode)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [organization, setOrganization] = useState('')
   const [isAdmin, setIsAdmin] = useState(false)
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
   const submit = async (event) => {
     event.preventDefault(); setError(''); setSuccess(''); setSubmitting(true)
@@ -47,7 +62,7 @@ export function AuthForm({ onClose, required = false }) {
           setSubmitting(false)
           return
         }
-        await register({ name: name.trim(), email: email.trim(), password, organization: organization.trim(), isAdmin })
+        await register({ name: name.trim(), email: email.trim(), password, isAdmin })
         setMode('signin')
         setPassword('')
         setConfirmPassword('')
@@ -68,7 +83,9 @@ export function AuthForm({ onClose, required = false }) {
   const showForgotPassword = () => { setMode('forgot'); setError(''); setSuccess(''); setConfirmPassword('') }
   const returnToSignin = () => { setMode('signin'); setError(''); setSuccess(''); setConfirmPassword('') }
 
-  return <div className={required ? 'auth-backdrop auth-required' : 'auth-backdrop'} role="presentation" onMouseDown={required ? undefined : onClose}>
+  const backdropClass = ['auth-backdrop', mode === 'register' ? 'auth-bg-register' : 'auth-bg-login', required && 'auth-required'].filter(Boolean).join(' ')
+
+  return <div className={backdropClass} role="presentation" onMouseDown={required ? undefined : onClose}>
     <section className="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title" onMouseDown={(event) => event.stopPropagation()}>
       <button className="auth-close" onClick={onClose} aria-label="Close">×</button>
       <img src="/mhub-logo.svg" alt="mHub" className="auth-logo" />
@@ -77,11 +94,24 @@ export function AuthForm({ onClose, required = false }) {
       <p className="auth-intro">{mode === 'signin' ? 'Sign in to access your saved opportunities.' : mode === 'forgot' ? 'Enter your email and we will send you a reset link.' : 'Register to save donor opportunities and keep your workspace in sync.'}</p>
       <form className="auth-form" onSubmit={submit}>
         {mode === 'register' && <label>Full name<input value={name} onChange={(event) => setName(event.target.value)} required autoComplete="name" /></label>}
-        {mode === 'register' && <label>Company or organisation<input value={organization} onChange={(event) => setOrganization(event.target.value)} autoComplete="organization" placeholder="Optional" /></label>}
         {mode === 'register' && <label className="auth-checkbox"><input type="checkbox" checked={isAdmin} onChange={(event) => setIsAdmin(event.target.checked)} /> Register as an mHub administrator</label>}
         <label>Email address<input type="email" value={email} onChange={(event) => setEmail(event.target.value)} required autoComplete="email" /></label>
-        {mode !== 'forgot' && <label>Password<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required minLength="6" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} /></label>}
-        {mode === 'register' && <label>Confirm Password<input type="password" value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required minLength="6" autoComplete="new-password" /></label>}
+        {mode !== 'forgot' && <label>Password
+          <div className="auth-password-field">
+            <input type={showPassword ? 'text' : 'password'} value={password} onChange={(event) => setPassword(event.target.value)} required minLength="6" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} />
+            <button type="button" className="auth-password-toggle" onClick={() => setShowPassword((value) => !value)} aria-label={showPassword ? 'Hide password' : 'Show password'} aria-pressed={showPassword}>
+              {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+            </button>
+          </div>
+        </label>}
+        {mode === 'register' && <label>Confirm Password
+          <div className="auth-password-field">
+            <input type={showConfirmPassword ? 'text' : 'password'} value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} required minLength="6" autoComplete="new-password" />
+            <button type="button" className="auth-password-toggle" onClick={() => setShowConfirmPassword((value) => !value)} aria-label={showConfirmPassword ? 'Hide password' : 'Show password'} aria-pressed={showConfirmPassword}>
+              {showConfirmPassword ? <EyeOffIcon /> : <EyeIcon />}
+            </button>
+          </div>
+        </label>}
         {error && <p className="auth-error" role="alert">{error}</p>}
         {success && <p className="auth-success" role="status">{success}</p>}
         <button className="primary-button auth-submit" disabled={submitting}>{submitting ? 'Please wait…' : mode === 'signin' ? 'Sign in' : mode === 'forgot' ? 'Send reset link' : 'Create account'}</button>
