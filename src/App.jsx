@@ -15,7 +15,6 @@ import './ui/styles/activities.css'
 import './ui/styles/discovery.css'
 import './ui/styles/settings.css'
 import './ui/styles/notifications.css'
-import './ui/styles/bright-theme.css'
 import './ui/styles/brand-logo.css'
 
 // The member-facing nav still uses the 'Collaborators' tab key internally

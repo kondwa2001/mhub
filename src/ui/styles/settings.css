@@ -48,9 +48,9 @@
 }
 
 .settings .message-banner.success {
-  background: #eaf5ef;
+  background: var(--green-light);
   border-left: 3px solid var(--green);
-  color: #10614d;
+  color: var(--green-dark);
 }
 
 .settings .message-banner.error {
@@ -165,7 +165,7 @@
 .settings .form-group input:focus {
   outline: none;
   border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(10, 123, 97, 0.12);
+  box-shadow: 0 0 0 3px rgba(18, 157, 71, 0.12);
 }
 
 .settings .form-group input:disabled {
@@ -204,11 +204,11 @@
   background: var(--green);
   color: #fff;
   border: 0;
-  box-shadow: 0 5px 13px #0a7b6126;
+  box-shadow: 0 5px 13px #129d4726;
 }
 
 .settings .primary-button:hover:not(:disabled) {
-  background: #086651;
+  background: var(--green-dark);
 }
 
 .settings .primary-button:disabled {

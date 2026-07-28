@@ -58,9 +58,9 @@
 }
 
 .collab-view.active {
-  border-color: #bcd8c9;
-  color: #10785a;
-  background: #eaf5ef;
+  border-color: var(--green-light);
+  color: var(--green-dark);
+  background: var(--green-light);
   font-weight: 700;
 }
 
@@ -80,9 +80,9 @@
 }
 
 .collab-notice.success {
-  background: #eaf5ef;
+  background: var(--green-light);
   border-left-color: var(--green);
-  color: #10614d;
+  color: var(--green-dark);
 }
 
 .collab-notice p {
@@ -129,22 +129,22 @@
 }
 
 .collab-add {
-  background: #eaf5ef;
-  color: #10785a;
+  background: var(--green-light);
+  color: var(--green-dark);
 }
 
 .collab-add:hover {
-  background: #ddeee4;
+  background: #d9efe1;
 }
 
 .collab-submit {
   background: var(--green);
   color: #fff;
-  box-shadow: 0 5px 13px #0a7b6126;
+  box-shadow: 0 5px 13px #129d4726;
 }
 
 .collab-submit:hover:not(:disabled) {
-  background: #086651;
+  background: var(--green-dark);
 }
 
 .collab-submit:disabled {
@@ -270,7 +270,7 @@
 .collab-field textarea:focus {
   outline: none;
   border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(10, 123, 97, 0.12);
+  box-shadow: 0 0 0 3px rgba(18, 157, 71, 0.12);
 }
 
 .collab-field small {
@@ -304,9 +304,9 @@
 }
 
 .collab-chip.active {
-  border-color: #bcd8c9;
-  color: #10785a;
-  background: #eaf5ef;
+  border-color: var(--green-light);
+  color: var(--green-dark);
+  background: var(--green-light);
   font-weight: 700;
 }
 
@@ -410,8 +410,8 @@
 }
 
 .collab-score.strong {
-  background: #e2f1e7;
-  color: #10614d;
+  background: var(--green-light);
+  color: var(--green-dark);
 }
 
 .collab-score.fair {
@@ -439,8 +439,8 @@
 }
 
 .collab-tag.matched {
-  background: #eaf5ef;
-  color: #10785a;
+  background: var(--green-light);
+  color: var(--green-dark);
 }
 
 /* Focus areas the project needs and this collaborator does not cover. Shown so
@@ -475,7 +475,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #45b485;
+  background: var(--green);
 }
 
 .collab-meta {
