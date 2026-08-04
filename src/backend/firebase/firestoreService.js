@@ -19,26 +19,30 @@ export async function saveOpportunity(opportunity) {
 }
 
 export async function createActivity(activity) {
+  const startsAt = activity.startsAt instanceof Date ? activity.startsAt : new Date(activity.startsAt)
   const dueAt = activity.dueAt instanceof Date ? activity.dueAt : new Date(activity.dueAt)
-  if (!activity.title?.trim() || Number.isNaN(dueAt.getTime())) {
-    throw new Error('An activity title and due date are required.')
+  if (!activity.title?.trim() || Number.isNaN(startsAt.getTime()) || Number.isNaN(dueAt.getTime())) {
+    throw new Error('An activity title and a start and end date are required.')
+  }
+  if (startsAt > dueAt) {
+    throw new Error('The end date must be on or after the start date.')
   }
 
   if (!hasFirebaseConfig || !db) {
-    return { id: `local-${Date.now()}`, ...activity, dueAt, startsAt: dueAt, status: 'upcoming' }
+    return { id: `local-${Date.now()}`, ...activity, startsAt, dueAt, status: 'upcoming' }
   }
 
   const record = await addDoc(collection(db, 'activities'), {
     title: activity.title.trim(),
     type: activity.type?.trim() || 'Activity',
     description: activity.description?.trim() || '',
+    startsAt,
     dueAt,
-    startsAt: dueAt,
     status: 'upcoming',
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   })
-  return { id: record.id, ...activity, dueAt, startsAt: dueAt, status: 'upcoming' }
+  return { id: record.id, ...activity, startsAt, dueAt, status: 'upcoming' }
 }
 
 /** Read the collaborator directory, discarding any tag that is not one of

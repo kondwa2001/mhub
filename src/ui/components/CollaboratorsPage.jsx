@@ -4,7 +4,7 @@ import { CollaboratorDirectory } from './CollaboratorDirectory'
 import { Icon } from './Icon'
 import '../styles/collaborators.css'
 
-export function CollaboratorsPage({ activities, collaborators, isSampleData, onCollaboratorAdded }) {
+export function CollaboratorsPage({ activities, collaborators, isSampleData }) {
   // Directory first: it's the unfiltered list of every donor on file. "Match a
   // project" only shows donors that share a focus tag with a chosen activity,
   // so landing there by default hid real records (many have no tags yet).
@@ -46,7 +46,6 @@ export function CollaboratorsPage({ activities, collaborators, isSampleData, onC
         <CollaboratorDirectory
           collaborators={collaborators}
           isSampleData={isSampleData}
-          onAdded={onCollaboratorAdded}
         />
       )}
     </section>

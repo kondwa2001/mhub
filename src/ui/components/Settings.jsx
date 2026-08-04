@@ -5,7 +5,7 @@ import { db } from '../../backend/firebase/firebaseConfig'
 import { Icon } from './Icon'
 import '../styles/settings.css'
 
-export function Settings({ user, onSignOut, onNavigate }) {
+export function Settings({ user, onNavigate }) {
   const [activeTab, setActiveTab] = useState('profile')
   const [formData, setFormData] = useState({
     name: user?.name || '',
@@ -264,10 +264,6 @@ export function Settings({ user, onSignOut, onNavigate }) {
               <button className="secondary-button" onClick={handleForgotPassword}>
                 <Icon name="mail" />
                 Forgot password...
-              </button>
-              <button className="secondary-button" onClick={onSignOut}>
-                <Icon name="logout" />
-                Sign out
               </button>
             </div>
           </div>

@@ -234,7 +234,7 @@ export function CollaboratorMatch({ activities, collaborators, isSampleData }) {
                 ))}
               </ul>
 
-              {(collaborator.regions?.length > 0 || collaborator.supportTypes?.length > 0) && (
+              {(collaborator.regions?.length > 0 || collaborator.supportTypes?.length > 0 || collaborator.contactEmail) && (
                 <div className="collab-meta">
                   {collaborator.regions?.length > 0 && <span>{collaborator.regions.join(' · ')}</span>}
                   {collaborator.supportTypes?.length > 0 && (
@@ -244,6 +244,7 @@ export function CollaboratorMatch({ activities, collaborators, isSampleData }) {
                         .join(' · ')}
                     </span>
                   )}
+                  {collaborator.contactEmail && <span><a href={`mailto:${collaborator.contactEmail}`}>{collaborator.contactEmail}</a></span>}
                 </div>
               )}
             </article>

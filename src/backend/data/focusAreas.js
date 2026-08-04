@@ -122,6 +122,10 @@ const FOCUS_BY_ID = new Map(FOCUS_AREAS.map((area) => [area.id, area]))
 const SUPPORT_IDS = new Set(SUPPORT_TYPES.map((type) => type.id))
 
 export const isFocusArea = (id) => FOCUS_BY_ID.has(id)
+
+/** A collaborator with no focus area can't be matched against any project,
+ * so every donor count and list in the app is scoped to this. */
+export const hasFocusArea = (collaborator) => Array.isArray(collaborator?.focusTags) && collaborator.focusTags.length > 0
 export const getFocusArea = (id) => FOCUS_BY_ID.get(id)
 export const focusLabel = (id) => FOCUS_BY_ID.get(id)?.label || id
 export const isSupportType = (id) => SUPPORT_IDS.has(id)

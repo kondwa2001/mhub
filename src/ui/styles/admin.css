@@ -82,6 +82,10 @@
 }
 
 .admin-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   margin-bottom: 12px;
 }
 
@@ -91,6 +95,10 @@
   letter-spacing: 1.3px;
   color: #82908b;
   font-weight: 700;
+}
+
+.admin-panel .collab-form {
+  margin-bottom: 20px;
 }
 
 .admin-empty {

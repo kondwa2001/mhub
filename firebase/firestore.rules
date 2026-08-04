@@ -45,15 +45,13 @@ service cloud.firestore {
       }
     }
 
-    // Partner/collaborator directory. Any signed-in workspace member can
-    // register a new collaborator from the Directory tab -- that's the
-    // intended, member-facing way this collection gets populated. Editing or
-    // removing an existing entry is reserved for administrators (set with a
-    // Firebase custom claim) so one member can't overwrite another's record.
+    // Partner/collaborator directory. Every signed-in workspace member can
+    // read it, but only administrators (set with a Firebase custom claim)
+    // can add, edit, or remove an entry -- the Directory tab's add-donor
+    // form lives in the admin workspace, not the member-facing view.
     match /collaborators/{collaboratorId} {
       allow read: if signedIn();
-      allow create: if signedIn();
-      allow update, delete: if signedIn() && request.auth.token.admin == true;
+      allow create, update, delete: if signedIn() && request.auth.token.admin == true;
     }
 
     // Members request introductions; contact details never appear in the directory.

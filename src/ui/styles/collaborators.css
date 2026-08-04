@@ -489,6 +489,16 @@
   color: #7c8a84;
 }
 
+.collab-meta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.collab-meta a:hover {
+  color: var(--green-dark);
+  text-decoration: underline;
+}
+
 @media (max-width: 620px) {
   .collab-form {
     padding: 18px;

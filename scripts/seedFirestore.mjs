@@ -21,7 +21,7 @@ const batch = db.batch()
 
 function asFirestoreValue(key, value) {
   if (value === 'SERVER_TIMESTAMP') return FieldValue.serverTimestamp()
-  if (key === 'deadlineAt' || key === 'startsAt') return value ? Timestamp.fromDate(new Date(value)) : null
+  if (key === 'deadlineAt' || key === 'startsAt' || key === 'dueAt') return value ? Timestamp.fromDate(new Date(value)) : null
   return value
 }
 
